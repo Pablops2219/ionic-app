@@ -12,7 +12,7 @@ if ! git pull origin main; then
 fi
 
 # Agregar todos los archivos al área de staging
-echo -e "${azul}Agregando archivos al área de staging...${normal}"
+echo -e "${azul}Agregando archivos al commit...${normal}"
 git add .
 
 # Hacer commit con un mensaje descriptivo
