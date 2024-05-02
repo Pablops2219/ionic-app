@@ -36,3 +36,34 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */ 
 
 
+ion-icon {
+    font-size: 2rem;
+}
+
+ion-header {
+
+
+
+    background: linear-gradient(180deg, #ff8119 0%, #ffbc65 100%);
+    padding: 10px;
+    height: 61px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    -ms-flex-order: -1;
+    order: -1;
+    width: 100%;
+    z-index: 10;
+}
+
+ion-header ion-img {
+    height: 45px;
+
+}
+
+ion-button {
+    --border-radius: 500px;
+    --background: rgba(250, 235, 215, 0);
+    --box-shadow: none;
+}
