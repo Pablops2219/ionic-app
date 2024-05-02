@@ -23,3 +23,6 @@ if ! git push origin main; then
 fi
 
 echo "Operaciones completadas exitosamente."
+
+# Esperar a que el usuario presione Enter para cerrar la consola
+read -p "Presiona Enter para salir..."
