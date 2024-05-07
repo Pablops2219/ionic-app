@@ -12,7 +12,6 @@ import { BarcodeScanningModalComponent } from './barcode-scanning-modal.componen
 
 @NgModule({
   imports: [
-    QrCodeModule,
     CommonModule,
     FormsModule,
     IonicModule,

@@ -56,25 +56,28 @@
     }
   </ion-card>
 
-  <ion-title class="m-top">Mis coches</ion-title>
+  <ion-title class="m-top">Mi coche</ion-title>
 
   <swiper-container>
     <swiper-slide>
       <ion-card>
-        <img alt="Silhouette of mountains" src="https://rentingfinders.com/wp-content/uploads/2020/02/tuning-coches.jpg" />
-        
+        <img alt="Silhouette of mountains"
+          src="https://rentingfinders.com/wp-content/uploads/2020/02/tuning-coches.jpg" />
+
       </ion-card>
     </swiper-slide>
     <swiper-slide>
       <ion-card>
-        <img alt="Silhouette of mountains" src="https://rentingfinders.com/wp-content/uploads/2020/02/tuning-coches.jpg" />
-        
+        <img alt="Silhouette of mountains"
+          src="https://rentingfinders.com/wp-content/uploads/2020/02/tuning-coches.jpg" />
+
       </ion-card>
     </swiper-slide>
     <swiper-slide>
       <ion-card>
-        <img alt="Silhouette of mountains" src="https://rentingfinders.com/wp-content/uploads/2020/02/tuning-coches.jpg" />
-        
+        <img alt="Silhouette of mountains"
+          src="https://rentingfinders.com/wp-content/uploads/2020/02/tuning-coches.jpg" />
+
       </ion-card>
     </swiper-slide>
 
@@ -82,9 +85,9 @@
 
   <div class="car-details">
     <ion-card color="secondary">
-          <ion-card-header >
-            <ion-card-title>Detalles del coche</ion-card-title>
-          </ion-card-header>
+      <ion-card-header>
+        <ion-card-title>Detalles del coche</ion-card-title>
+      </ion-card-header>
       <ion-card-content color="secondary">
         <ion-list>
           <ion-item>
@@ -100,5 +103,28 @@
       </ion-card-content>
     </ion-card>
   </div>
+  <ion-text color="primary">
+    <h1 class="ion-padding-start">Comparte tu coche!</h1>
+  </ion-text>
+
+  <div id="qrImage">
+
+    <div class="d-flex-center">
+      <div class="qr-wrapper d-flex-center">
+        <qr-code [value]="qrText" size="190" errorCorrectionLevel="M"></qr-code>
+        <img *ngIf="!qrText" src="assets/images/qr.webp" class="qr-placeholder" alt="">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex-center">
+    <ion-button (click)="captureScreen()" [disabled]="!qrText" class="submit ion-margin-top" expand="block"
+      shape="round">
+      Compartir
+      <ion-icon slot="end" name="share-social-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <div class="ion-padding-top">{{qrText}}</div>
 
 </ion-content>
