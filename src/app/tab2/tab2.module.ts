@@ -6,15 +6,17 @@ import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { BarcodeScanningModalComponent } from "../barcode-scanning-modal/barcode-scanning-modal.component";
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    ExploreContainerComponentModule,
-    Tab2PageRoutingModule
-  ],
-  declarations: [Tab2Page]
+    declarations: [Tab2Page],
+    imports: [
+        IonicModule,
+        CommonModule,
+        FormsModule,
+        ExploreContainerComponentModule,
+        Tab2PageRoutingModule,
+        BarcodeScanningModalComponent
+    ]
 })
 export class Tab2PageModule {}
