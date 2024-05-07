@@ -1,6 +1,5 @@
 import {
   AfterViewInit,
-  CUSTOM_ELEMENTS_SCHEMA,
   Component,
   ElementRef,
   Input,
@@ -18,15 +17,56 @@ import {
 } from '@capacitor-mlkit/barcode-scanning';
 import { ModalController } from '@ionic/angular';
 
-@Component({
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  standalone:true,
-  selector: 'app-barcode-scanning-modal',
-  templateUrl: './barcode-scanning-modal.component.html',
-  styleUrls: ['./barcode-scanning-modal.component.scss'],
-})
 
-export class BarcodeScanningModalComponent  implements OnInit, AfterViewInit, OnDestroy {
+@Component({
+  selector: 'app-barcode-scanning',
+  template: `
+    <ion-header class="ion-no-border">
+      <ion-toolbar color="tertiary">
+        <ion-buttons slot="end">
+          <ion-button (click)="closeModal()">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <div #square class="square"></div>
+      <ion-fab
+        *ngIf="isTorchAvailable"
+        slot="fixed"
+        horizontal="end"
+        vertical="bottom"
+      >
+        <ion-fab-button (click)="toggleTorch()">
+          <ion-icon name="flashlight"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+  `,
+  styles: [
+    `
+      ion-content {
+        --background: transparent;
+      }
+
+      .square {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 16px;
+        width: 200px;
+        height: 200px;
+        border: 6px solid white;
+        box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3);
+      }
+    `,
+  ],
+})
+export class BarcodeScanningModalComponent
+  implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   public formats: BarcodeFormat[] = [];
   @Input()
