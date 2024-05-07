@@ -1,37 +1,7 @@
-.RicardoLogo{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row nowrap;
+ion-menu-button{
+    color: white;
 }
 
-.RicardoLogo ion-img{
-    width: 100px;
+ion-menu{
+    margin-bottom: 200px;
 }
-
-.headerGeneral{
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-ion-header{
-    background: linear-gradient(180deg, #7CA6F9 0%, #5E4AE7 100%);
-    height: 81px;
-    display: block;
-     position: relative;
-     -ms-flex-order: -1;
-     order: -1;
-     width: 100%;
-     z-index: 10;
-   }
-
-ion-tab-bar{
-    height: 55px;
-}
-
-ion-tab-bar{
-    // background: linear-gradient(180deg, #ff9b2a 0%, #ffbc65 100%);
-
-}
-
