@@ -74,6 +74,19 @@
 
     </swiper-container>
 
+    <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
+      (click)="navigateToStreaming()">
+      <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
+      <ion-card-header>
+        <ion-card-title>{{ event.title }}</ion-card-title>
+
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ event.description }}</p>
+        <b>En directo</b>
+      </ion-card-content>
+    </ion-card>
 
     <ion-item>
       <ion-label>
@@ -81,18 +94,17 @@
       </ion-label>
     </ion-item>
 
-    <ion-card class="cartaEvento" *ngFor="let event of events">
-      <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
-      <ion-card-header>
-        <ion-card-title>{{ event.title }}</ion-card-title>
-        <ion-card-subtitle>{{ event.date }}</ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        {{ event.description }}
-      </ion-card-content>
+    <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
+      <ng-container>
+        <div class="fila">
+          <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
+          <div class="contenido">
+            <h3>{{ event.title }}</h3>
+            <b>{{ event.date }}</b>
+          </div>
+        </div>
+      </ng-container>
     </ion-card>
-
 
   </ion-content>
 

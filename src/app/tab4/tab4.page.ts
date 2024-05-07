@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
 export class Tab4Page{
 
   events: any[];
-
-  constructor(private eventService: EventService, private router: Router) {
+  
+  constructor(public eventService: EventService, private router: Router) {
     this.events = this.eventService.getEvents();
   }
+  
 
   navigateToStreaming() {
     this.router.navigate(['./tabs/streaming']);

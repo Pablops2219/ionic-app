@@ -8,7 +8,6 @@
   <ion-header>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-      <ion-icon (click)="navigateToStreaming()" name="videocam"></ion-icon>
     </ion-buttons>
     <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
     <ion-buttons>
@@ -20,23 +19,28 @@
   </ion-header>
 
   <ion-content [fullscreen]="true">
-    <ion-card class="cartaEvento">
-      <img alt="Silhouette of mountains" src="{{ events[0].srcimg }}" />
+    <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
+      (click)="navigateToStreaming()">
+      <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
       <ion-card-header>
-        <ion-card-title>{{ events[0].title }}</ion-card-title>
+        <ion-card-title>{{ event.title }}</ion-card-title>
 
       </ion-card-header>
 
       <ion-card-content>
-        <p>{{ events[0].description }}</p>
-        <b>{{ events[0].date }}</b>
+        <p>{{ event.description }}</p>
+        <b>En directo</b>
       </ion-card-content>
-
-
     </ion-card>
 
-    <ion-card class="cartaEvento evento" *ngFor="let event of events; let i = index">
-      <ng-container *ngIf="i > 0">
+    <ion-item>
+      <ion-label>
+        <h1>Próximos eventos</h1>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
+      <ng-container>
         <div class="fila">
           <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
           <div class="contenido">
@@ -46,5 +50,4 @@
         </div>
       </ng-container>
     </ion-card>
-
   </ion-content>

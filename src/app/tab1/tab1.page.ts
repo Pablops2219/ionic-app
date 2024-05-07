@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { EventService } from '../services/event.service';
 
 @Component({
@@ -11,7 +12,12 @@ import { EventService } from '../services/event.service';
 export class Tab1Page {
   events: any[];
 
-  constructor(private eventService: EventService) {
+  constructor(public eventService: EventService, private router: Router) {
     this.events = this.eventService.getEvents();
+  }
+  
+
+  navigateToStreaming() {
+    this.router.navigate(['./tabs/streaming']);
   }
 }

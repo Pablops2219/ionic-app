@@ -34,3 +34,41 @@ swiper-slide {
     border-bottom-right-radius: 5px;
     margin-left: 0;
 }
+
+.inLive b{
+  color: rgb(216, 4, 4);
+}
+
+.inLive {
+  border: 1px solid rgba(168, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
+}
+
+.evento {
+  display: flex;
+  flex-direction: row;
+}
+
+.evento img {
+  width: 45%;
+  object-fit: cover; /* Asegura que la imagen cubra completamente su área sin distorsionar */
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+}
+
+.fila img{
+    padding: 5px;
+    padding-right: 0;
+    border-radius: 9px;
+}
+
+.contenido {
+  flex-grow: 1;
+  padding-left: 10px; /* Añade un poco de espacio entre la imagen y el contenido */
+}
+
+.contenido h3{
+    font-size: 18px;
+}
