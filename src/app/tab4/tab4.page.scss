@@ -1,0 +1,47 @@
+ion-icon{
+    color: white;
+}
+ion-menu-button{
+    color: white;
+}
+.cartaEvento p{
+    margin-bottom: 10px;
+}
+
+ion-card-title{
+    color: rgb(205, 133, 16);
+    font-size: 25px;
+    
+}
+
+.evento {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .evento img {
+    width: 45%;
+    object-fit: cover; /* Asegura que la imagen cubra completamente su área sin distorsionar */
+  }
+  
+  .fila {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .fila img{
+      padding: 5px;
+      padding-right: 0;
+      border-radius: 9px;
+  }
+  
+  .contenido {
+    flex-grow: 1;
+    padding-left: 10px; /* Añade un poco de espacio entre la imagen y el contenido */
+  }
+
+  .contenido h3{
+      color: rgb(205, 133, 16);
+      font-size: 18px;
+  }
+  

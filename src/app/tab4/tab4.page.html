@@ -1,0 +1,50 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-title>Menu Content</ion-title>
+  </ion-header>
+  <ion-content class="ion-padding">This is the menu content.</ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-icon (click)="navigateToStreaming()" name="videocam"></ion-icon>
+    </ion-buttons>
+    <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
+    <ion-buttons>
+      <ion-button color="light" size="large">
+        <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-card class="cartaEvento">
+      <img alt="Silhouette of mountains" src="{{ events[0].srcimg }}" />
+      <ion-card-header>
+        <ion-card-title>{{ events[0].title }}</ion-card-title>
+
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ events[0].description }}</p>
+        <b>{{ events[0].date }}</b>
+      </ion-card-content>
+
+
+    </ion-card>
+
+    <ion-card class="cartaEvento evento" *ngFor="let event of events; let i = index">
+      <ng-container *ngIf="i > 0">
+        <div class="fila">
+          <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
+          <div class="contenido">
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.date }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </ion-card>
+
+  </ion-content>
