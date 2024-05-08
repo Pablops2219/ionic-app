@@ -1,10 +1,26 @@
 <ion-menu contentId="main-content" >
   <ion-header>
-    <ion-title>Menu Content</ion-title>
+  
   </ion-header>
-  <ion-content class="ion-padding">
-    Scanner
+
+  <ion-content>
+    <ion-item [button]="true" detail="false" (click)="navigateToEscaner()">
+      <div class="unread-indicator-wrapper">
+        <div class="unread-indicator"></div>
+      </div>
+      <ion-label>
+        <strong>Escaner<br></strong>
+        <ion-note color="medium" class="ion-text-wrap">
+          ¡Comparte tus coches y mira aquellos que otra gente haya compartido!
+        </ion-note>
+      </ion-label>
+      <div class="metadata-end-wrapper">
+        <ion-icon color="medium" name="chevron-forward"></ion-icon>
+      </div>
+    </ion-item>
+  
   </ion-content>
+
 </ion-menu>
 <div class="ion-page" id="main-content" >
   <ion-header>
@@ -30,7 +46,7 @@
 
     
 
-    <swiper-container>
+    <swiper-container navigation="true">
       <swiper-slide>
         <ion-card>
           <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />

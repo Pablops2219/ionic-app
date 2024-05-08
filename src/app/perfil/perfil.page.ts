@@ -6,7 +6,6 @@ import { BarcodeScanner, LensFacing } from '@capacitor-mlkit/barcode-scanning';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import html2canvas from 'html2canvas';
-import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 
 
 @Component({
@@ -52,27 +51,6 @@ export class PerfilPage implements OnInit {
       {title: 'Notifications', icon: 'notifications-outline', color: 'primary'},
       {title: 'Logout', icon: 'log-out-outline', color: 'secondary', background: 'primary'},
     ];
-  }
-
-  
-  async startScan() {
-    const modal = await this.modalController.create({
-      component: BarcodeScanningModalComponent,
-      cssClass: 'barcode-scanning-modal',
-      showBackdrop: false,
-      componentProps: {
-        formats: [],
-        lensFacing: LensFacing.Back
-      }
-    });
-
-    await modal.present();
-
-    const { data } = await modal.onWillDismiss();
-
-    if (data) {
-      this.scanResult = data?.barcode?.displayValue;
-    }
   }
 
   // Captura el elemento html lo convierte a un "canvas" y genera una imagen

@@ -173,5 +173,10 @@ ion-segment{
    align-items: center;
  }
  
+ ion-list {
+  margin: 0px !important;
+}
  
- 
+.direction{
+  flex-flow: column;
+}

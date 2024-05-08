@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { EventService } from '../services/event.service';
 import { Router } from '@angular/router';
 
@@ -8,22 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['tab1.page.scss']
 })
 
-
 export class Tab1Page {
-  events: any[];
-
+  events: any[] = [];
 
   constructor(
     private eventService: EventService,
     private router: Router,
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.events = this.eventService.getEvents();
   }
+
 
   navigateToPerfil() {
     this.router.navigate(['/perfil']);
   }
 
-  
-
+  navigateToEscaner() {
+    this.router.navigate(['/home']);
+  }
 }

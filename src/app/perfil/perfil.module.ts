@@ -8,7 +8,6 @@ import { PerfilPageRoutingModule } from './perfil-routing.module';
 
 import { IonicSlides } from '@ionic/angular';
 import { PerfilPage } from './perfil.page';
-import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 import { QrCodeComponent, QrCodeModule } from 'ng-qrcode';
 
 
@@ -20,7 +19,7 @@ import { QrCodeComponent, QrCodeModule } from 'ng-qrcode';
     IonicModule,
     PerfilPageRoutingModule,
   ],
-  declarations: [PerfilPage, BarcodeScanningModalComponent],
+  declarations: [PerfilPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PerfilPageModule {

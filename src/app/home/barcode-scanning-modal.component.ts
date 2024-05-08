@@ -47,6 +47,26 @@ import { ModalController } from '@ionic/angular';
   `,
   styles: [
     `
+
+      
+ion-header {
+  background: linear-gradient(180deg, #ff8119 0%, #ffbc65 100%);
+  padding: 0px;
+  height: 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  -ms-flex-order: -1;
+  order: -1;
+  width: 100%;
+  z-index: 10;
+}
+
+ion-header ion-img {
+height: 45px;
+
+}
       ion-content {
         --background: transparent;
       }
