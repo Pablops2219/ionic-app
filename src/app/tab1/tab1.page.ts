@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import { EventService } from '../services/event.service';
 import { Router } from '@angular/router';
+import { EventService } from '../services/event.service';
 
 @Component({
   selector: 'app-tab1',
