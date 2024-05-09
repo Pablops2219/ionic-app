@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
+  <ion-buttons> 
+  </ion-buttons>
+
+</ion-header>
+
+<!-- dependencias: npm i html2canvas, npm install ng-qrcode --save,
+   npm install @capacitor/filesystem, npm install @capacitor/share,
+   npm install @capacitor-mlkit/barcode-scanning, npx cap sync,
+   npm install @capacitor/android, npx cap add android
+   ionic build para montar
+    ionic cap sync para sincronizar nuevos cambios desde la ultima build-->
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-segment [(ngModel)]="segment" value="segment" mode="ios">
+
+    <!-- Segments -->
+    <ion-segment-button value="scan">
+      <ion-label>Escanear QR</ion-label>
+    </ion-segment-button>
+
+
+  </ion-segment>
+
+  <!-- Scan QR -->
+  <div class="segment" *ngIf="segment === 'scan'">
+    <div class="segment-content">
+      
+      <img src="assets\images\scan-qr.webp" alt="">
+
+      <h6 class="scan-label">¡Escanea o selecciona una imagen pare ver un coche compartido!</h6>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-button  expand="block" (click)="startScan()" class="submit" shape="round">
+            Escanea
+            <ion-icon slot="end" name="scan-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" class="submit" shape="round">
+            Galería
+            <ion-icon slot="end" name="image-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <!-- Resultado del escaner -->
+      <ion-item class="result" *ngIf="scanResult" lines="none">
+        <ion-label>
+          <p>Resultado del escaner</p>
+          <div>{{scanResult}}</div>
+        </ion-label>
+      </ion-item>
+
+    </div>
+  </div>
+
+  <!-- Gen QR -->
+  <div class="segment" *ngIf="segment === 'generate'">
+    <div class="segment-content">
+      <div id="qrImage">
+        <div class="d-flex-center">
+          <div class="d-flex-center qr-wrapper">
+            <qr-code [value]="qrText" size="190" errorCorrectionLevel="M"></qr-code>
+            <img *ngIf="!qrText" src="assets/images/qr.webp" class="qr-placeholder" alt="">
+          </div>
+        </div>
+        <div class="ion-padding-top">{{qrText}}</div>
+      </div>
+
+      <ion-textarea label="Escribe algo" labelPlacement="stacked" fill="outline" [(ngModel)]="qrText" rows="4"
+        autoGrow="true">
+
+      </ion-textarea>
+
+      <!-- Compartir QR -->
+      <ion-button (click)="captureScreen()" [disabled]="!qrText" class="submit ion-margin-top" expand="block"
+        shape="round">
+        Compartir
+        <ion-icon slot="end" name="share-social-outline"></ion-icon>
+      </ion-button>
+
+    </div>
+  </div>
+
+
+
+</ion-content>

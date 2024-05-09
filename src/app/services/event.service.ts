@@ -17,6 +17,8 @@ export class EventService {
     { id: 4, title: 'Campeonato de España de Superbike ESBK', date: '2024-06-01', srcimg: 'https://binn.wpenginepowered.com/wp-content/uploads/2023/05/ESBK-Foto-RFME-1536x1025.jpg', description: 'Superbike, Supersport y carreras de promoción de jóvenes talentos'},
     // Más eventos...
   ];
+  
+  
 
   constructor(private datePipe: DatePipe) { } // Inyecta DatePipe en el constructor
 

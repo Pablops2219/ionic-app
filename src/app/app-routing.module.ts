@@ -6,6 +6,17 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },{
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },{
+    path: 'streaming',
+    loadChildren: () => import('./streaming/streaming.module').then( m => m.StreamingPageModule)
+  },
+
 
 
 

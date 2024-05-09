@@ -1,23 +1,41 @@
-<ion-menu contentId="main-content">
+<ion-menu contentId="main-content" >
   <ion-header>
-    <ion-title>Menu Content</ion-title>
+  
   </ion-header>
-  <ion-content class="ion-padding">This is the menu content.</ion-content>
+
+  <ion-content>
+    <ion-item [button]="true" detail="false" (click)="navigateToEscaner()">
+      <div class="unread-indicator-wrapper">
+        <div class="unread-indicator"></div>
+      </div>
+      <ion-label>
+        <strong>Escaner<br></strong>
+        <ion-note color="medium" class="ion-text-wrap">
+          ¡Comparte tus coches y mira aquellos que otra gente haya compartido!
+        </ion-note>
+      </ion-label>
+      <div class="metadata-end-wrapper">
+        <ion-icon color="medium" name="chevron-forward"></ion-icon>
+      </div>
+    </ion-item>
+  
+  </ion-content>
+
 </ion-menu>
-<div class="ion-page" id="main-content">
+<div class="ion-page" id="main-content" >
   <ion-header>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" color="dark">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
     <ion-buttons>
-      <ion-button color="light" size="large">
+      <ion-button color="light" size="large" (click)="navigateToPerfil()">
         <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
+    
 
   </ion-header>
-
 
   <ion-content padding="sm">
     <ion-item>
@@ -26,8 +44,9 @@
       </ion-label>
     </ion-item>
 
+    
 
-    <swiper-container>
+    <swiper-container navigation="true">
       <swiper-slide>
         <ion-card>
           <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />

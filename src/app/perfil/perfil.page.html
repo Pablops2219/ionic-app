@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
+  <ion-buttons>
+    <ion-button color="light" size="large">
+      <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+</ion-header>
+
+<ion-content color="tertiary">
+
+  <ion-card class="profile-content">
+
+    <div align="center" class="image">
+      <ion-avatar>
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174135.png" />
+      </ion-avatar>
+    </div>
+
+    <ion-item lines="none" class="profile">
+      <ion-label class="ion-text-center">
+        <ion-text color="secondary">Motero 1</ion-text>
+        <p>
+          <ion-text color="medium">-------------------------</ion-text>
+        </p>
+      </ion-label>
+    </ion-item>
+
+  </ion-card>
+
+  <ion-card class="options">
+    @for(row of getRows(); track $index) {
+    <ion-row class="ion-margin" [ngClass]="{
+          'borderBottom' : (($index + 1) * 3) < options.length,
+          'paddingTop' : $index == 0
+        }">
+      @for(item of row; track $index) {
+      <ion-col size="4" class="ion-text-center">
+
+        <ion-label class="d-flex-center direction">
+          <ion-avatar [style.background]="'var(--ion-color-' + (item.background || 'light') + ')'">
+            <ion-icon [color]="item.color" [name]="item.icon"></ion-icon>
+          </ion-avatar>
+          <p>
+            <ion-text color="primary">{{item?.title}}</ion-text>
+          </p>
+        </ion-label>
+
+      </ion-col>
+      }
+    </ion-row>
+    }
+  </ion-card>
+
+  <ion-title class="m-top">Mi coche</ion-title>
+
+  <swiper-container navigation="true">
+    <swiper-slide>
+      <ion-card>
+        <img alt="Car1" src="https://content.media.ccdn.es/api/v1/cnet-media/images/6c/6cc20a1e-7c0a-4cd2-be13-dffb48fd00e8?rule=articleMainImageMeta" />
+
+      </ion-card>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-card>
+        <img alt="Car2" src="https://www.cochesyconcesionarios.com/media/cache/1024w/uploads/toyota/corolla/12/ha/toyota-corolla-hatchback-06-20a76562b0bb5004f7dffdac48933f8ef3f6b744.jpeg" />
+
+      </ion-card>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-card>
+        <img alt="Car3" src="https://fotos.quecochemecompro.com/toyota-corolla/toyota-corolla-hibrido-naranja.jpeg?size=750x400" />
+
+      </ion-card>
+    </swiper-slide>
+
+  </swiper-container>
+
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>Detalles del coche</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="ion-no-padding">
+        <ion-item color="secondary">
+          <ion-label>Marca: Toyota</ion-label>
+        </ion-item>
+
+        <ion-item color="secondary">
+          <ion-label>Modelo: Corolla</ion-label>
+        </ion-item>
+
+        <ion-item color="secondary">
+          <ion-label>Año: 2022</ion-label>
+        </ion-item>
+
+        <ion-item color="secondary" lines="none">
+          <ion-label>Color: Rojo</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-text color="primary">
+    <h1 class="ion-padding-start">Comparte tu coche!</h1>
+  </ion-text>
+
+  <div id="qrImage">
+
+    <div class="d-flex-center">
+      <div class="qr-wrapper d-flex-center">
+        <qr-code [value]="qrText" size="190" errorCorrectionLevel="M"></qr-code>
+        <img *ngIf="!qrText" src="assets/images/qr.webp" class="qr-placeholder" alt="">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex-center">
+    <ion-button (click)="captureScreen()" [disabled]="!qrText" class="submit ion-margin-top" expand="block"
+      shape="round">
+      Compartir
+      <ion-icon slot="end" name="share-social-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+</ion-content>
