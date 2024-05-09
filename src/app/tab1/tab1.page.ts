@@ -8,16 +8,24 @@ import { EventService } from '../services/event.service';
   styleUrls: ['tab1.page.scss']
 })
 
-
 export class Tab1Page {
-  events: any[];
+  events: any[] = [];
 
-  constructor(public eventService: EventService, private router: Router) {
+  constructor(
+    public eventService: EventService,
+    private router: Router,
+  ) {}
+
+  ngOnInit() {
     this.events = this.eventService.getEvents();
   }
-  
 
-  navigateToStreaming() {
-    this.router.navigate(['./tabs/streaming']);
+
+  navigateToPerfil() {
+    this.router.navigate(['/perfil']);
+  }
+
+  navigateToEscaner() {
+    this.router.navigate(['/home']);
   }
 }
