@@ -4,6 +4,7 @@ import { IonicModule, LoadingController, ModalController, Platform } from '@ioni
 import { Location } from '@angular/common';
 import { BarcodeScanner, LensFacing } from '@capacitor-mlkit/barcode-scanning';
 import { Directory, Filesystem } from '@capacitor/filesystem';
+import { UserService} from '../services/user.service';
 
 import html2canvas from 'html2canvas';
 import { Share } from '@capacitor/share';
@@ -17,17 +18,19 @@ import { Share } from '@capacitor/share';
 export class PerfilPage implements OnInit {
 
   color="secondary"
-
   options: any[] = [];
+  users: any[] = [];
 
   constructor(
     private loadingController: LoadingController,
     private platform: Platform,
     private modalController: ModalController,
-    private location: Location 
+    private location: Location,
+    private userService: UserService
   ) {
-   
+    
   }
+
   
   
   segment = 'scan';
@@ -36,6 +39,8 @@ export class PerfilPage implements OnInit {
 
 
   ngOnInit() {
+
+    this.users = this.userService.getUsers();
 
     if(this.platform.is('capacitor')){
       BarcodeScanner.isSupported().then();

@@ -8,7 +8,7 @@ import { PerfilPageRoutingModule } from './perfil-routing.module';
 
 import { IonicSlides } from '@ionic/angular';
 import { PerfilPage } from './perfil.page';
-import { QrCodeComponent, QrCodeModule } from 'ng-qrcode';
+import { QrCodeModule } from 'ng-qrcode';
 
 
 @NgModule({
