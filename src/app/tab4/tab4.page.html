@@ -39,6 +39,10 @@
       </ion-label>
     </ion-item>
 
+    <div>
+      <input type="button" value="Convert" (click)="captureScreen()"/>
+    </div>
+
     <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
       <ng-container>
         <div class="fila">
@@ -46,11 +50,13 @@
           <div class="contenido">
             <h3>{{ event.title }}</h3>
             <p>{{ event.date }}</p>
-            <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+            <ion-button (click)="captureScreen()" id="generate-pdf-btn" expand="block" fill="clear" shape="round">
               Comprar entrada
             </ion-button>
           </div>
         </div>
       </ng-container>
     </ion-card>
+    
+    
   </ion-content>
