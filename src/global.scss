@@ -99,7 +99,14 @@ ion-button {
 .submit {
     margin-top: 40px;
     background-color: #ff8119;
+    color: #ffffff;
     border-radius: 15px;
+    margin-top: 15px;
+    height: 30px;
+}
+
+.submit ion-icon{
+    width: 25px;
 }
 
 .empty {

@@ -3,8 +3,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="logo">
+    <img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png" alt="">
+  </div>
   <div class="d-flex-center">
-    <form [formGroup]="form" class="auth-form">
+    <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
 
       <app-custom-input autocomplete="email" [control]="form.controls.email" type="email" label="Correo"
         icon="mail-outline">
@@ -15,7 +18,6 @@
         </div>
         <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo válido
         </div>
-
       </div>
 
       <app-custom-input icon="lock-closed-outline" [control]="form.controls.password" type="password"
@@ -27,7 +29,14 @@
         </div>
       </div>
 
+      <p routerLink="forgot-password" class="ion-text-end">¿Olvidaste tu contraseña?</p>
+
       <ion-button expand="block" type="submit" mode="ios" class="submit" [disabled]="form.invalid">Ingresar
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="sing-up" expand="block" type="submit" mode="ios" class="submit" fill="outline">Registrarse
+        <ion-icon slot="end" name="person-add-outline"></ion-icon>
       </ion-button>
 
 
