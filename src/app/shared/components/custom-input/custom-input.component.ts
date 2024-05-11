@@ -13,7 +13,7 @@ export class CustomInputComponent  implements OnInit {
   @Input() label!: string;
   @Input() autocomplete!: string;
   @Input() icon!: string;
-
+  
 
   
 
