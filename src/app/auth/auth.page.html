@@ -3,9 +3,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">auth</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <form [formGroup]="form">
+
+    <app-custom-input autocomplete="email" [control]="form.controls.email" type="email" labe="Correo"
+      icon="mail-outline">
+    </app-custom-input>
+    <app-custom-input icon="lock-closed-outline"></app-custom-input>
+
+  </form>
+
+
+
 </ion-content>
