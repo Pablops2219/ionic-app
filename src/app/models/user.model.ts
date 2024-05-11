@@ -1,5 +1,3 @@
-import { Vehicle } from "./vehicle";
-
 export interface User {
     idUser: number;
     name: string;
@@ -7,5 +5,5 @@ export interface User {
     email: string;
     coins: number;
     icon: string;
-    vehicles: Vehicle[];
+    password: string;
   }

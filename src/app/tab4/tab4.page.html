@@ -40,7 +40,7 @@
     </ion-item>
 
     <div>
-      <input type="button" value="Convert" (click)="captureScreen()"/>
+      <input type="button" value="Convert" (click)="captureScreen()" />
     </div>
 
     <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
@@ -57,6 +57,6 @@
         </div>
       </ng-container>
     </ion-card>
-    
-    
+
+
   </ion-content>
