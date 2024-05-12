@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule, LoadingController, ModalController, Platform } from '@ionic/angular';
 import { Location } from '@angular/common';
@@ -8,6 +8,8 @@ import { UserService} from '../services/user.service';
 
 import html2canvas from 'html2canvas';
 import { Share } from '@capacitor/share';
+import { FirebaseService } from '../services/firebase.service';
+import { UtilsService } from '../services/utils.service';
 
 
 @Component({
@@ -20,6 +22,9 @@ export class PerfilPage implements OnInit {
   color="secondary"
   options: any[] = [];
   users: any[] = [];
+  firebaseSvc = inject (FirebaseService);
+  utilsSvc = inject (UtilsService);
+
 
   constructor(
     private loadingController: LoadingController,
@@ -50,12 +55,12 @@ export class PerfilPage implements OnInit {
 
     console.log('profile ngoninit');
     this.options = [
-      {title: 'Vehiculos', icon: 'car-outline', color: 'primary'},
-      {title: 'Chat', icon: 'chatbubbles-outline', color: 'primary'},
-      {title: 'Wishlist', icon: 'heart-outline', color: 'primary'},
-      {title: 'Settings', icon: 'options-outline', color: 'primary'},
-      {title: 'Notifications', icon: 'notifications-outline', color: 'primary'},
-      {title: 'Logout', icon: 'log-out-outline', color: 'secondary', background: 'primary'},
+      {title: 'Vehiculos', icon: 'car-outline', color: 'primary', click: "(click)=singOut()"},
+      {title: 'Chat', icon: 'chatbubbles-outline', color: 'primary', click: "(click)=singOut()"},
+      {title: 'Wishlist', icon: 'heart-outline', color: 'primary', click: "(click)=singOut()"},
+      {title: 'Settings', icon: 'options-outline', color: 'primary', click:"(click)=singOut()"},
+      {title: 'Notifications', icon: 'notifications-outline', color: 'primary',click: "(click)=singOut()"},
+      {title: 'Logout', icon: 'log-out-outline', color: 'secondary', background: 'primary', click: "(click)=singOut()"},
     ];
   }
 
@@ -121,6 +126,11 @@ export class PerfilPage implements OnInit {
       rows.push(this.options.slice(i, i + 3));
     }
     return rows;
+  }
+
+
+  singOut(){
+    this.firebaseSvc.singOut();
   }
   
   

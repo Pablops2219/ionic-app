@@ -4,6 +4,7 @@ import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, upd
 import { User } from '../models/user.model';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {getFirestore, setDoc, doc, getDoc} from '@angular/fire/firestore';
+import { UtilsService } from './utils.service';
 
 
 
@@ -14,6 +15,7 @@ export class FirebaseService {
 
   auth = inject (AngularFireAuth);
   firestore = inject(AngularFirestore);
+  utilsSvc = inject (UtilsService);
 
 
   signIn(user: User){
@@ -31,6 +33,12 @@ export class FirebaseService {
 
   getAuth(){
     return getAuth();
+  }
+
+  singOut(){
+    getAuth().signOut();
+    localStorage.removeItem('user');
+    this.utilsSvc.routerLink('/auth');
   }
 
 
