@@ -17,6 +17,7 @@
     "@angular/common": "^17.0.2",
     "@angular/compiler": "^17.0.2",
     "@angular/core": "^17.0.2",
+    "@angular/fire": "^17.0.1",
     "@angular/forms": "^17.0.2",
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
@@ -37,6 +38,7 @@
     "@ionic/pwa-elements": "^3.2.2",
     "axios": "^1.6.8",
     "es6-promise": "^4.2.8",
+    "firebase": "^10.11.1",
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.1",
     "ionicons": "^7.0.0",
@@ -48,7 +50,7 @@
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular-devkit/build-angular": "^17.3.7",
     "@angular-eslint/builder": "^17.0.0",
     "@angular-eslint/eslint-plugin": "^17.0.0",
     "@angular-eslint/eslint-plugin-template": "^17.0.0",
