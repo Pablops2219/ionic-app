@@ -5,7 +5,10 @@ import { LoadingController, Platform } from '@ionic/angular';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf'
+import { jsPDF } from 'jspdf';
+
+
+
 
 @Component({
   selector: 'app-tab4',
@@ -35,28 +38,14 @@ export class Tab4Page {
   captureScreen() {
     
     const doc = new jsPDF();
-    doc.text('Holi',10,10);
-    
+
     var img = new Image()
     img.src = 'assets/ticket-sample.png'
-    doc.addImage(img, 'png', 2, 5, 205, 80)//210 es full anchura
-    doc.save('hello.pdf');
+    doc.addImage(img, 'png', 2, 50, 205, 80)//210 es full anchura
+
+    doc.save('entradas.pdf');
 
 
-
-
-    // let data = document.getElementById('contentToConvert');
-    // html2canvas(data as any).then(canvas => {
-    //     var imgWidth = 210;
-    //     var pageHeight = 295;
-    //     var imgHeight = canvas.height * imgWidth / canvas.width;
-    //     var heightLeft = imgHeight;
-    //     const contentDataURL = canvas.toDataURL('image/png');
-    //     let pdfData = new jsPDF('p', 'mm', 'a4');
-    //     var position = 0;
-    //     pdfData.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    //     pdfData.save(`MyPdf.pdf`);
-    // });
 
     // const elemento = document.getElementById('cartaEvento') as HTMLElement;
     // html2canvas(elemento).then((canvas: HTMLCanvasElement) => {
