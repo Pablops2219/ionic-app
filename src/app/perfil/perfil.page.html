@@ -11,7 +11,7 @@
 
 </ion-header>
 
-<ion-content color="tertiary">
+<ion-content>
 
   <ion-card class="profile-content">
 
@@ -24,9 +24,7 @@
     <ion-item lines="none" class="profile">
       <ion-label class="ion-text-center">
         <ion-text color="secondary">{{users[0].name}} {{users[0].last_name}}</ion-text>
-        <p>
-          <ion-text color="medium">-------------------------</ion-text>
-        </p>
+
         <ion-text color="secondary">{{users[0].coins}}</ion-text>
       </ion-label>
     </ion-item>
@@ -34,32 +32,11 @@
   </ion-card>
 
   <ion-card class="options">
-    @for(row of getRows(); track $index) {
-    <ion-row class="ion-margin" [ngClass]="{
-          'borderBottom' : (($index + 1) * 3) < options.length,
-          'paddingTop' : $index == 0
-        }">
-      @for(item of row; track $index) {
-      <ion-col size="4" class="ion-text-center">
-
-        <ion-label class="d-flex-center direction">
-          <ion-button (click)="singOut()" expand="block" fill="clear" shape="round">
-            <ion-avatar [style.background]="'var(--ion-color-' + (item.background || 'light') + ')'">
-              <ion-icon [color]="item.color" [name]="item.icon"></ion-icon>
-            </ion-avatar>
-          </ion-button>
-          <p>
-            <ion-text color="primary">{{item?.title}}</ion-text>
-          </p>
-        </ion-label>
-
-      </ion-col>
-      }
-    </ion-row>
-    }
+    <div class="monedero">
+      <ion-icon name="wallet-outline"></ion-icon>
+      <strong>Monedero</strong>
+    </div>
   </ion-card>
-
-  <ion-title class="m-top">Mi garaje</ion-title>
 
   <swiper-container>
     <swiper-slide>

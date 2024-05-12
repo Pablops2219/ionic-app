@@ -1,7 +1,19 @@
+ion-content {
+  --background: white; /* Cambia #f0f0f0 por el color de fondo deseado */
+}
+
+.monedero{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile-content {
-    background: var(--ion-color-primary);
-    border-radius: 25px;
-    padding-bottom: 18vh;
+    background: rgb(255, 136, 25);
+    border-radius: 0px 0px 20px 20px ;
+    width: 80%;
+    margin: 0 auto;
   }
   
   .image {
@@ -15,17 +27,11 @@
     }
   }
   
-  ion-item.profile {
+  options {
     --background: transparent;
-    ion-label {
-      font-size: 1.5rem;
-      font-weight: 600;
-      p {
-        font-size: 1rem;
-        font-weight: bold;
-        margin-top: 10px;
-      }
-    }
+    width: 80%;
+    margin: 0 auto;
+    height: 200px;
   }
   
   ion-card.options {
