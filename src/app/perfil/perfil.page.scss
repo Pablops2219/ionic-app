@@ -84,7 +84,6 @@
 
 swiper-container {
     width: 100%;
-    height: 200px;
   }
    
   swiper-slide {
@@ -179,4 +178,9 @@ ion-segment{
  
 .direction{
   flex-flow: column;
+}
+
+.descripcionCoche{
+  border-radius: 0;
+  margin: 0;
 }

@@ -59,10 +59,39 @@
 
   <ion-title class="m-top">Mi coche</ion-title>
 
-  <swiper-container navigation="true">
+  <swiper-container>
     <swiper-slide>
       <ion-card>
         <img alt="Car1" src={{users[0].vehicles[0].image}} />
+
+        <ion-card color="primary" class="descripcionCoche">
+          <ion-card-header>
+            <ion-card-title>Detalles del coche</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list class="ion-no-padding">
+              <ion-item color="secondary">
+                <ion-label>Matricula: {{users[0].vehicles[0].licensePlate}}</ion-label>
+              </ion-item>
+      
+              <ion-item color="secondary">
+                <ion-label>Marca: {{users[0].vehicles[0].make}}</ion-label>
+              </ion-item>
+      
+              <ion-item color="secondary">
+                <ion-label>Modelo: {{users[0].vehicles[0].model}}</ion-label>
+              </ion-item>
+      
+              <ion-item color="secondary">
+                <ion-label>Año: {{users[0].vehicles[0].year}}</ion-label>
+              </ion-item>
+      
+              <ion-item color="secondary" lines="none">
+                <ion-label>Color: {{users[0].vehicles[0].color}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
 
       </ion-card>
     </swiper-slide>
@@ -70,47 +99,80 @@
       <ion-card>
         <img alt="Car2"
           src="https://www.cochesyconcesionarios.com/media/cache/1024w/uploads/toyota/corolla/12/ha/toyota-corolla-hatchback-06-20a76562b0bb5004f7dffdac48933f8ef3f6b744.jpeg" />
-
+          <ion-card color="primary" class="descripcionCoche">
+            <ion-card-header>
+              <ion-card-title>Detalles del coche</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list class="ion-no-padding">
+                <ion-item color="secondary">
+                  <ion-label>Matricula: {{users[1].vehicles[1].licensePlate}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary">
+                  <ion-label>Marca: {{users[1].vehicles[1].make}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary">
+                  <ion-label>Modelo: {{users[1].vehicles[1].model}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary">
+                  <ion-label>Año: {{users[1].vehicles[1].year}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary" lines="none">
+                  <ion-label>Color: {{users[1].vehicles[1].color}}</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+    
+    
       </ion-card>
     </swiper-slide>
-    <swiper-slide>
+    
+    <!-- <swiper-slide>
       <ion-card>
         <img alt="Car3"
           src="https://fotos.quecochemecompro.com/toyota-corolla/toyota-corolla-hibrido-naranja.jpeg?size=750x400" />
-
+          <ion-card color="primary" class="descripcionCoche">
+            <ion-card-header>
+              <ion-card-title>Detalles del coche</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list class="ion-no-padding">
+                <ion-item color="secondary">
+                  <ion-label>Matricula: {{users[2].vehicles[2].licensePlate}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary">
+                  <ion-label>Marca: {{users[2].vehicles[2].make}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary">
+                  <ion-label>Modelo: {{users[2].vehicles[2].model}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary">
+                  <ion-label>Año: {{users[2].vehicles[2].year}}</ion-label>
+                </ion-item>
+        
+                <ion-item color="secondary" lines="none">
+                  <ion-label>Color: {{users[2].vehicles[2].color}}</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+    
+          
       </ion-card>
-    </swiper-slide>
+    </swiper-slide> -->
+    
 
   </swiper-container>
 
-  <ion-card color="primary">
-    <ion-card-header>
-      <ion-card-title>Detalles del coche</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list class="ion-no-padding">
-        <ion-item color="secondary">
-          <ion-label>Matricula: {{users[0].vehicles[0].licensePlate}}</ion-label>
-        </ion-item>
-
-        <ion-item color="secondary">
-          <ion-label>Marca: {{users[0].vehicles[0].make}}</ion-label>
-        </ion-item>
-
-        <ion-item color="secondary">
-          <ion-label>Modelo: {{users[0].vehicles[0].model}}</ion-label>
-        </ion-item>
-
-        <ion-item color="secondary">
-          <ion-label>Año: {{users[0].vehicles[0].year}}</ion-label>
-        </ion-item>
-
-        <ion-item color="secondary" lines="none">
-          <ion-label>Color: {{users[0].vehicles[0].color}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+  
 
 
 
