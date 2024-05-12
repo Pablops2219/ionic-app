@@ -39,10 +39,6 @@
       </ion-label>
     </ion-item>
 
-    <div>
-      <input type="button" value="Convert" (click)="captureScreen()" />
-    </div>
-
     <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
       <ng-container>
         <div class="fila">
