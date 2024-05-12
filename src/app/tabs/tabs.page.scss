@@ -9,3 +9,17 @@ ion-menu{
 ion-tab-bar {
     --ion-background-color: linear-gradient(#ffbc65 0% ,#ff8119 100%);
 }
+
+.options{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+.options strong{
+    
+}
+
+ion-icon{
+    color: #ff8119;
+}

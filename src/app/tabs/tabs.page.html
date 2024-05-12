@@ -4,12 +4,52 @@
   </ion-header>
 
   <ion-content>
+    <ion-item [button]="true" detail="false" (click)="navigateToPerfil()">
+      <div class="unread-indicator-wrapper">
+        <div class="unread-indicator"></div>
+      </div>
+      <ion-label>
+        <div class="options">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <strong>Perfil<br></strong>
+        </div>
+        <ion-note color="medium" class="ion-text-wrap">
+          Visita tu perfil
+        </ion-note>
+      </ion-label>
+      <div class="metadata-end-wrapper">
+        <ion-icon color="medium" name="chevron-forward"></ion-icon>
+      </div>
+    </ion-item>
+
+    <ion-item [button]="true" detail="false">
+      <div class="unread-indicator-wrapper">
+        <div class="unread-indicator"></div>
+      </div>
+      <ion-label>
+        <div class="options">
+          <ion-icon name="car-outline"></ion-icon>
+          <strong>Garaje<br></strong>
+        </div>
+        <ion-note color="medium" class="ion-text-wrap">
+          Visualiza tus vehiculos
+        </ion-note>
+      </ion-label>
+      <div class="metadata-end-wrapper">
+        <ion-icon color="medium" name="chevron-forward"></ion-icon>
+      </div>
+    </ion-item>
+
+
     <ion-item [button]="true" detail="false" (click)="navigateToEscaner()">
       <div class="unread-indicator-wrapper">
         <div class="unread-indicator"></div>
       </div>
       <ion-label>
-        <strong>Escaner<br></strong>
+        <div class="options">
+          <ion-icon name="qr-code-outline"></ion-icon>
+          <strong>Escaner<br></strong>
+        </div>
         <ion-note color="medium" class="ion-text-wrap">
           ¡Comparte tus coches y mira aquellos que otra gente haya compartido!
         </ion-note>
@@ -19,6 +59,20 @@
       </div>
     </ion-item>
 
+    <ion-item [button]="true" detail="false" (click)="singOut()">
+      <div class="unread-indicator-wrapper">
+        <div class="unread-indicator"></div>
+      </div>
+      <ion-label>
+        <div class="options">
+          <ion-icon name="log-out-outline"></ion-icon>
+          <strong>Cerrar sesión<br></strong>
+        </div>
+      </ion-label>
+      <div class=" metadata-end-wrapper">
+        <ion-icon color="medium" name="chevron-forward"></ion-icon>
+      </div>
+    </ion-item>
   </ion-content>
 
 </ion-menu>
@@ -29,7 +83,7 @@
     </ion-buttons>
     <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
     <ion-buttons>
-      <ion-button color="light" size="large" (click)="navigateToPerfil()">
+      <ion-button color="light" size="large">
         <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -46,7 +100,7 @@
 
 
       <ion-tab-button tab="tab2">
-        <ion-icon color="light"  name="newspaper"></ion-icon>
+        <ion-icon color="light" name="newspaper"></ion-icon>
       </ion-tab-button>
       <!-- 
     <ion-tab-button tab="tab3">
@@ -54,22 +108,22 @@
     </ion-tab-button> -->
 
       <ion-tab-button tab="tab4">
-        <ion-icon color="light"  name="flag"></ion-icon>
+        <ion-icon color="light" name="flag"></ion-icon>
       </ion-tab-button>
 
       <ion-tab-button tab="tab1" href="/tabs/tab2">
-        <ion-icon color="light"  aria-hidden="true" name="home"></ion-icon>
+        <ion-icon color="light" aria-hidden="true" name="home"></ion-icon>
       </ion-tab-button>
 
 
       <ion-tab-button tab="tab5">
-        <ion-icon color="light"  name="pricetags"></ion-icon>
+        <ion-icon color="light" name="pricetags"></ion-icon>
       </ion-tab-button>
 
 
 
       <ion-tab-button tab="tab6">
-        <ion-icon color="light"  name="map"></ion-icon>
+        <ion-icon color="light" name="map"></ion-icon>
       </ion-tab-button>
 
     </ion-tab-bar>

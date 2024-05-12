@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirebaseService } from '../services/firebase.service';
+import { UtilsService } from '../services/utils.service';
 
 @Component({
   selector: 'app-tabs',
@@ -8,6 +11,10 @@ import { Router } from '@angular/router';
 })
 export class TabsPage {
 
+  firebaseSvc = inject (FirebaseService);
+  utilsSvc = inject (UtilsService);
+
+  
   constructor(private router: Router) {}
 
   navigateToStreaming() {
@@ -20,5 +27,9 @@ export class TabsPage {
 
   navigateToEscaner() {
     this.router.navigate(['/home']);
+  }
+
+  singOut(){
+    this.firebaseSvc.singOut();
   }
 }
