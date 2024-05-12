@@ -3,7 +3,7 @@ import { AngularFireAuth} from '@angular/fire/compat/auth';
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import { User } from '../models/user.model';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
-import {getFirestore, setDoc, doc} from '@angular/fire/firestore';
+import {getFirestore, setDoc, doc, getDoc} from '@angular/fire/firestore';
 
 
 
@@ -29,11 +29,18 @@ export class FirebaseService {
     return updateProfile(getAuth().currentUser, {displayName})
   }
 
+  getAuth(){
+    return getAuth();
+  }
 
 
 
 
   setDocument(path: string, data: any){
     return setDoc(doc(getFirestore(), path), data)
+  }
+
+  async getDocument(path: string){
+    return (await getDoc(doc(getFirestore(), path))).data();
   }
 }

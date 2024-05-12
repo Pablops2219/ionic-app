@@ -17,7 +17,9 @@ export class SingUpPage implements OnInit {
     password: new FormControl('',[Validators.required]),
     name: new FormControl('',[Validators.required, Validators.minLength(4)]),
     uid: new FormControl(''),
-
+    coins: new FormControl(100),
+    last_name: new FormControl(''),
+    icon: new FormControl('https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg'),
   })
   
     firebaseSvc = inject(FirebaseService);
@@ -67,6 +69,7 @@ export class SingUpPage implements OnInit {
           
           this.utilsSvc.saveInLocalStorage('user', this.form.value);
           this,this.utilsSvc.routerLink('/tabs/tab1');
+          this.utilsSvc.presentToast({message: `¡Enhorabuena, has obtenido 100 coins por registrate!`, duration: 2500, color: 'tertiary', position:'middle', icon:'alert-circle-outline'})
           this.form.reset();
 
         }).catch(error => {
