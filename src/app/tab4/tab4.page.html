@@ -1,14 +1,21 @@
-<ion-segment [(ngModel]) value="pizza">
-  <ion-segment-button value="pizza">
-    <ion-label>Pizza</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="pasta">
-    <ion-label>Pasta</ion-label>
-  </ion-segment-button>
-</ion-segment>
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>fix</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-segment [(ngModel)]="segment">
+    <ion-segment-button value="eventos">
+      <ion-label class="textoSegment">Eventos</ion-label> 
+    </ion-segment-button>
+    <ion-segment-button value="eventos-comunidad">
+      <ion-label class="textoSegment">Comunidad</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 
 
-  <ion-content [fullscreen]="true">
+  <div *ngIf="segment === 'eventos'">
     <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
       (click)="navigateToStreaming()">
       <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
@@ -43,6 +50,12 @@
         </div>
       </ng-container>
     </ion-card>
+  </div>
+
+  
+  <div *ngIf="segment === 'eventos-comunidad'">
+  
+  </div>
 
 
-  </ion-content>
+</ion-content>

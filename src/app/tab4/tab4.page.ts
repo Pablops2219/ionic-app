@@ -16,6 +16,9 @@ import { jsPDF } from 'jspdf';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page {
+
+  segment= 'eventos';
+
   events: any[];
   
   constructor(

@@ -13,30 +13,144 @@
 
 <ion-content>
 
-  <ion-card class="profile-content">
+  <ion-card class="profile-container">
 
-    <div align="center" class="image">
+    <div class="profile-content">
       <ion-avatar>
         <img src={{users[0].icon}} alt="" />
       </ion-avatar>
+
+      <div class="profile-name">
+        <ion-label>
+          <ion-text color="light">{{users[0].name}}</ion-text> <br>
+          <ion-text style="font-size: 17px;">{{users[0].last_name}}</ion-text>
+        </ion-label>
+      </div>
+      <div class="profile-coches">
+        <ion-label>
+          <ion-text>{{users[0].vehicles.length}}</ion-text> <br>
+          <ion-text style="font-size: 17px;">Vehiculos</ion-text>
+        </ion-label>
+      </div>
+      <div class="profile-coins">
+        <ion-label>
+          <ion-text>{{users[0].coins}}</ion-text> <br>
+          <ion-text style="font-size: 17px;">Monedas</ion-text>
+        </ion-label>
+      </div>
     </div>
 
-    <ion-item lines="none" class="profile">
-      <ion-label class="ion-text-center">
-        <ion-text color="secondary">{{users[0].name}} {{users[0].last_name}}</ion-text>
 
-        <ion-text color="secondary">{{users[0].coins}}</ion-text>
-      </ion-label>
-    </ion-item>
+      <p class="tituloLogro">Logros</p>
+      <swiper-container slides-per-view="4">
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light">
+                <p>Primer <br> evento</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light">
+                <p>Primer <br> Vehiculo</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light">
+                <p>Primera <br> oferta</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light" style="font-size: 10px;" >
+                <p>Premio <br> Comunitario</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light">
+                <p>Primer <br> evento</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light">
+                <p>Primer <br> evento</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light">
+                <p>Primer <br> evento</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+        <swiper-slide>
+
+          <ion-card class="logro">
+            <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
+              alt="">
+            <ion-item color="primary">
+              <ion-text color="light">
+                <p>Primer <br> evento</p>
+              </ion-text>
+            </ion-item>
+          </ion-card>
+
+        </swiper-slide>
+      </swiper-container>
 
   </ion-card>
 
-  <ion-card class="options">
-    <div class="monedero">
-      <ion-icon name="wallet-outline"></ion-icon>
-      <strong>Monedero</strong>
-    </div>
-  </ion-card>
 
   <swiper-container>
     <swiper-slide>
