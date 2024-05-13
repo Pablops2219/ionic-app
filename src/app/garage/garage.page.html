@@ -8,28 +8,30 @@
 
   <ion-list>
     <ion-item-sliding class="product-item" *ngFor="let vehicle of vehicles">
-      <div class="vehicle">
-        <ion-avatar class="image-vehicle">
-          <img [src]="vehicle.image" />
-        </ion-avatar>
-        <div>
-          <ion-label>
-            Matricula: {{vehicle.license_plate}}
-          </ion-label>
-          <ion-label>
-            Marca: {{vehicle.make}}
-          </ion-label>
-          <ion-label>
-            Modelo: {{vehicle.model}}
-          </ion-label>
-          <ion-label>
-            Año: {{vehicle.year}}
-          </ion-label>
-          <ion-label>
-            Color: {{vehicle.color}}
-          </ion-label>
+      <ion-item>
+        <div class="vehicle">
+          <ion-avatar class="image-vehicle">
+            <img src="{{vehicle.image}}" />
+          </ion-avatar>
+          <div>
+            <ion-label>
+              Matricula: {{vehicle.license_plate}}
+            </ion-label>
+            <ion-label>
+              Marca: {{vehicle.make}}
+            </ion-label>
+            <ion-label>
+              Modelo: {{vehicle.model}}
+            </ion-label>
+            <ion-label>
+              Año: {{vehicle.year}}
+            </ion-label>
+            <ion-label>
+              Color: {{vehicle.color}}
+            </ion-label>
+          </div>
         </div>
-      </div>
+      </ion-item>
       <ion-item-options side="start">
 
       </ion-item-options>
