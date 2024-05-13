@@ -28,8 +28,10 @@
 
       <ion-card-content>
         <p>{{ promotions[0].description }}</p>
-        <b>{{ promotions[0].precio }} </b>
-        <img class="moneda" src="../../assets/Diseño_sin_título__5_-removebg-preview.png" alt="">
+        <div class="precioContainer">
+          <p class="margin-fix">{{ promotions[0].precio }} </p>
+          <img class="moneda" src="../../assets/Diseño_sin_título__5_-removebg-preview.png" alt="">
+        </div>
       </ion-card-content>
 
 
@@ -42,7 +44,10 @@
           <div class="contenido">
             <h3>{{ promotion.title }}</h3>
             <p>{{ promotion.description }}</p>
-            <p>{{ promotion.precio }} coins </p>
+            <div class="precioContainer">
+              <p>{{ promotion.precio }} coins </p>
+              <img class="moneda" src="../../assets/Diseño_sin_título__5_-removebg-preview.png" alt="">
+            </div>
           </div>
         </div>
       </ng-container>

@@ -39,7 +39,7 @@ export class PerfilPage implements OnInit {
   
   
   segment = 'scan';
-  qrText = 'bomboclat';
+  qrText = 'test';
   scanResult = '';
 
 
