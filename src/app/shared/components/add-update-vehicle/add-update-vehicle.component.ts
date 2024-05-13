@@ -13,6 +13,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class AddUpdateVehicleComponent  implements OnInit {
 
   form = new FormGroup({
+
     uid: new FormControl(''),
     license_plate: new FormControl('',[Validators.required]),
     make: new FormControl('',[Validators.required]),
@@ -23,22 +24,48 @@ export class AddUpdateVehicleComponent  implements OnInit {
   })
   
     firebaseSvc = inject(FirebaseService);
-    utilsSvc = inject(UtilsService)
+    utilsSvc = inject(UtilsService);
+
+    user = {} as User;
   
     ngOnInit() {
+      this.user = this.utilsSvc.getFromLocalStorage('user');
     }
-  
+    
+    //Hacer o seleccionar foto
+    
+    async takeImage(){
+      const dataUrl = await (await this.utilsSvc.takePicture('Imagen del vehiculo')).dataUrl;
+      this.form.controls.image.setValue(dataUrl);
+    }
+
     async submit(){
       if(this.form.valid){
+
+        let path = `users/${this.user.uid}/vehicles`
   
         const loading = await this.utilsSvc.loading();
         await loading.present();
-  
-        this.firebaseSvc.signUp(this.form.value as unknown as User).then( async res => {
 
-          await this.firebaseSvc.updateUser(this.form.value.make)
-          let uid = res.user.uid;
-          this.form.controls.uid.setValue(uid);
+        // Subir imagen y obtener URL
+        let dataUrl = this.form.value.image;
+        let imagePath = `${this.user.uid}/${Date.now}`;
+        let imageUrl = await this.firebaseSvc.uploadImage(imagePath, dataUrl);
+        this.form.controls.image.setValue(imageUrl);
+
+        delete this.form.value.uid
+  
+        this.firebaseSvc.addDocument(path, this.form.value).then( async res => {
+
+          this.utilsSvc.dismissModal({success: true});
+
+          this.utilsSvc.presentToast({
+            message: 'Vehiculo añadido', 
+            duration: 1500,
+            color: 'success',
+            position: 'middle',
+            icon: 'checkmark-outline'
+          })
 
         }).catch(error => {
 

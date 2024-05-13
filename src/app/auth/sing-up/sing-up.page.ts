@@ -68,7 +68,7 @@ export class SingUpPage implements OnInit {
         this.firebaseSvc.setDocument(path, this.form.value).then( async res => {
           
           this.utilsSvc.saveInLocalStorage('user', this.form.value);
-          this,this.utilsSvc.routerLink('/tabs/tab1');
+          this.utilsSvc.routerLink('/tabs/tab1');
           this.utilsSvc.presentToast({message: `¡Enhorabuena, has obtenido 100 coins por registrate!`, duration: 2500, color: 'tertiary', position:'middle', icon:'alert-circle-outline'})
           this.form.reset();
 
