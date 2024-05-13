@@ -1,27 +1,4 @@
-<ion-menu contentId="main-content">
-  <ion-header>
 
-  </ion-header>
-
-  <ion-content>
-    <ion-item [button]="true" detail="false">
-      <div class="unread-indicator-wrapper">
-        <div class="unread-indicator"></div>
-      </div>
-      <ion-label>
-        <strong>Escaner<br></strong>
-        <ion-note color="medium" class="ion-text-wrap">
-          ¡Comparte tus coches y mira aquellos que otra gente haya compartido!
-        </ion-note>
-      </ion-label>
-      <div class="metadata-end-wrapper">
-        <ion-icon color="medium" name="chevron-forward"></ion-icon>
-      </div>
-    </ion-item>
-
-  </ion-content>
-
-</ion-menu>
 <div class="ion-page" id="main-content">
   <ion-header>
     <ion-buttons slot="start" color="dark">
@@ -40,7 +17,7 @@
   <ion-content padding="sm">
     <ion-item>
       <ion-label>
-        <h1 class="titulo">Noticias</h1>
+        <h1 class="titulo Montserrat">Bienvenido  {{users[0].name}} !</h1>
       </ion-label>
     </ion-item>
 

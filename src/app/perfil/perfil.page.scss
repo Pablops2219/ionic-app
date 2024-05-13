@@ -9,29 +9,92 @@ ion-content {
   align-items: center;
 }
 
+
 .profile-content {
+  font-weight: 600;
+  font-family: 'Montserrat', serif;
+  align-items: flex-end;
+  padding: 10px;
+  display: flex;
     background: rgb(255, 136, 25);
     border-radius: 0px 0px 20px 20px ;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
   
-  .image {
-    transform: translateY(5vh);
-    ion-avatar {
-      width: 25vh;
-      height: 25vh;
-      border: 3px solid var(--ion-color-secondary);
-      padding: 0.8vh;
-      margin-bottom: 6vh;
-    }
+  .profile-name{
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  .profile-name ion-label ion-text{
+    color: rgb(255, 255, 255);
+    font-size:22px;
+  }
+
+  .profile-coches{
+    margin-bottom: 5px;
+    margin-left: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  .profile-coches ion-label ion-text{
+    color: rgb(255, 255, 255);
+    font-size:22px;
+  }
+
+  .profile-coins{
+    margin-bottom: 5px;
+    margin-left: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  .profile-coins ion-label ion-text{
+    color: rgb(255, 255, 255);
+    font-size:22px;
   }
   
-  options {
-    --background: transparent;
-    width: 80%;
-    margin: 0 auto;
-    height: 200px;
+  .profile-container{
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+  }
+
+
+  .swiper{
+    
+  }
+
+  .tituloLogro{
+    color: black;
+    margin: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Montserrat', serif;
+  }
+
+  .logro{
+    font-family: 'Montserrat', serif;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .logro img{
+    justify-content: center;
+    max-width: 50px;
+  }
+
+  .logro p{
+    
+    margin: 0;
   }
   
   ion-card.options {
@@ -49,18 +112,7 @@ ion-content {
         ion-label {
           text-align: -webkit-center;
           // letter-spacing: 0.3px;
-          ion-avatar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 4vh;
-            height: 4vh;
-            background-color: var(--ion-color-light);
-            border-radius: 50%;
-            ion-icon {
-              font-size: 1.3rem;
-            }
-          }
+          
           p {
             margin-top: 5px;
             ion-text {
@@ -72,7 +124,19 @@ ion-content {
       }
     }
   }
-    
+
+  ion-avatar {
+    display: flex;
+    align-items: center;
+    min-width: 10vh;
+    height: 10vh;
+    background-color: var(--ion-color-light);
+    border-radius: 50%;
+    ion-icon {
+      font-size: 1.3rem;
+    }
+  }
+
   .borderBottom {
     border-bottom: 1px solid var(--ion-color-light);
   }
