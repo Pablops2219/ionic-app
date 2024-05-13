@@ -20,6 +20,7 @@
     ],
     "button-type": "off",
     "typescript-config/strict": "off",
-    "meta-viewport": "off"
+    "meta-viewport": "off",
+    "no-inline-styles": "off"
   }
 }
