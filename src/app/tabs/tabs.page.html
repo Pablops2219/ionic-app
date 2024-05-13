@@ -4,13 +4,13 @@
   </ion-header>
 
   <ion-content>
-    <ion-item [button]="true" detail="false" (click)="navigateToPerfil()">
+    <ion-item [button]="true" detail="false"  (click)="navigateToPerfil()">
       <div class="unread-indicator-wrapper">
         <div class="unread-indicator"></div>
       </div>
       <ion-label>
         <div class="options">
-          <ion-icon name="person-outline"></ion-icon>
+          <ion-icon  name="person-outline"></ion-icon>
           <strong>Perfil<br></strong>
         </div>
         <ion-note color="medium" class="ion-text-wrap">
@@ -154,8 +154,8 @@
     </ion-buttons>
     <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
     <ion-buttons>
-      <ion-button color="light" size="large">
-        <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
+      <ion-button color="light" size="large" (click)="navigateToPerfil()">
+        <ion-icon color="light" slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
 
