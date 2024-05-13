@@ -1,5 +1,69 @@
 <ion-header [translucent]="true">
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="/"></ion-back-button>
+  <ion-buttons (click)="dismissModal()" slot="start">
+    <ion-icon name="close-outline"></ion-icon>
   </ion-buttons>
 </ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="d-flex-center">
+    <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+
+      <!-- MATRICULA-->
+      <app-custom-input autocomplete="Matrícula" [control]="form.controls.license_plate" type="text" label="Matrícula"
+        icon="car-outline">
+      </app-custom-input>
+
+      <div class="validators" *ngIf="form.controls.license_plate.errors && form.controls.license_plate.touched">
+        <div *ngIf="form.controls.license_plate.errors?.['required']">La matrícula es requerido
+        </div>
+      </div>
+
+      <!-- MARCA-->
+      <app-custom-input autocomplete="Marca" [control]="form.controls.make" type="text" label="Marca"
+        icon="cog-outline">
+      </app-custom-input>
+
+      <div class="validators" *ngIf="form.controls.make.errors && form.controls.make.touched">
+        <div *ngIf="form.controls.make.errors?.['required']">La marca es requerido
+        </div>
+      </div>
+
+      <!-- MODELO-->
+      <app-custom-input autocomplete="Marca" [control]="form.controls.make" type="text" label="Modelo"
+        icon="hammer-outline">
+      </app-custom-input>
+
+      <div class="validators" *ngIf="form.controls.make.errors && form.controls.make.touched">
+        <div *ngIf="form.controls.make.errors?.['required']">El modelo es requerido
+        </div>
+      </div>
+
+      <!-- AÑO-->
+      <app-custom-input autocomplete="Año" [control]="form.controls.year" type="text" label="Año"
+        icon="calendar-outline">
+      </app-custom-input>
+
+
+      <!-- COLOR-->
+      <app-custom-input autocomplete="Color" [control]="form.controls.color" type="text" label="Color"
+        icon="color-palette-outline">
+      </app-custom-input>
+
+      <!-- IMAGEN-->
+      <app-custom-input autocomplete="Imagen" [control]="form.controls.image" type="text" label="Imagen"
+        icon="image-outline">
+      </app-custom-input>
+
+
+      <ion-button type="submit" mode="ios" class="submit" [disabled]="form.invalid">Agregar
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button type="submit" mode="ios" class="submit" [disabled]="form.invalid">Actualizar
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </ion-button>
+
+
+    </form>
+  </div>
+</ion-content>
