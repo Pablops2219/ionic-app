@@ -3,7 +3,7 @@ import { AngularFireAuth} from '@angular/fire/compat/auth';
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import { User } from '../models/user.model';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
-import {getFirestore, setDoc, doc, getDoc, addDoc, collection} from '@angular/fire/firestore';
+import {getFirestore, setDoc, doc, getDoc, addDoc, collection, collectionData, query} from '@angular/fire/firestore';
 import { UtilsService } from './utils.service';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
 import {getStorage, uploadString, ref, getDownloadURL} from "firebase/storage";
@@ -49,6 +49,12 @@ export class FirebaseService {
 
   setDocument(path: string, data: any){
     return setDoc(doc(getFirestore(), path), data)
+  }
+
+  //Obtener documentos de una colleción
+  getCollectionData(path: string, collectionQuery?: any ){
+    const ref = collection(getFirestore(), path);
+    return collectionData(query(ref,collectionQuery), {idField: 'uid'});
   }
 
   //obtener un documento

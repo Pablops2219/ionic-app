@@ -1,0 +1,16 @@
+.vehicle{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 97%;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: 1px solid rgb(255, 144, 58);
+}
+
+.image-vehicle{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 0px;
+}
