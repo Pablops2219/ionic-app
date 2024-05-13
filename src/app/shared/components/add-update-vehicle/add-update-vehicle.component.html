@@ -71,14 +71,10 @@
         </div>
       </div>
 
-      <ion-button type="submit" mode="ios" class="submit" [disabled]="form.invalid">Agregar
-        <ion-icon name="add-outline"></ion-icon>
+      <ion-button type="submit" mode="ios" class="submit" [disabled]="form.invalid">
+        {{vehicle ? 'Actualizar ' : 'Agregar '}}
+        <ion-icon [name]="vehicle ? 'checkmark-outline' : 'add-outline'"></ion-icon>
       </ion-button>
-
-      <ion-button type="submit" mode="ios" class="submit" [disabled]="form.invalid">Actualizar
-        <ion-icon name="checkmark-outline"></ion-icon>
-      </ion-button>
-
 
     </form>
   </div>

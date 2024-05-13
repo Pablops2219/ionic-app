@@ -1,6 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
+import { Vehicle } from 'src/app/models/vehicle.module';
 
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -11,6 +12,8 @@ import { UtilsService } from 'src/app/services/utils.service';
   styleUrls: ['./add-update-vehicle.component.scss'],
 })
 export class AddUpdateVehicleComponent  implements OnInit {
+
+  @Input() vehicle: Vehicle
 
   form = new FormGroup({
 
@@ -30,6 +33,7 @@ export class AddUpdateVehicleComponent  implements OnInit {
   
     ngOnInit() {
       this.user = this.utilsSvc.getFromLocalStorage('user');
+      if(this.vehicle) this.form.setValue(this.vehicle);
     }
     
     //Hacer o seleccionar foto
@@ -39,8 +43,20 @@ export class AddUpdateVehicleComponent  implements OnInit {
       this.form.controls.image.setValue(dataUrl);
     }
 
-    async submit(){
-      if(this.form.valid){
+    submit(){
+      if(this.form.valid){ 
+
+        if(this.vehicle) {
+          this.updateVehicle();
+        }
+        else{
+          this.createVehicle();
+        } 
+      }
+
+    }
+
+    async createVehicle(){
 
         let path = `users/${this.user.uid}/vehicles`
   
@@ -60,7 +76,49 @@ export class AddUpdateVehicleComponent  implements OnInit {
           this.utilsSvc.dismissModal({success: true});
 
           this.utilsSvc.presentToast({
-            message: 'Vehiculo añadido', 
+            message: 'Vehículo añadido', 
+            duration: 1500,
+            color: 'success',
+            position: 'middle',
+            icon: 'checkmark-outline'
+          })
+
+        }).catch(error => {
+
+          console.log(error);
+          this.utilsSvc.presentToast({message: error.message, duration: 2500, color: 'tertiary', position:'middle', icon:'alert-circle-outline'})
+
+        }).finally(()=> {
+
+          loading.dismiss();
+
+        })    
+    }
+
+    async updateVehicle(){
+
+        let path = `users/${this.user.uid}/vehicles/${this.vehicle.uid}`
+  
+        const loading = await this.utilsSvc.loading();
+        await loading.present();
+
+        // Si la imagen cambia , subir la nueva imagen y obtener URL
+        if(this.form.value.image !== this.vehicle.image){
+          let dataUrl = this.form.value.image;
+          let imagePath = await this.firebaseSvc.getFilePath(this.vehicle.image);
+          let imageUrl = await this.firebaseSvc.uploadImage(imagePath, dataUrl);
+          this.form.controls.image.setValue(imageUrl);
+        }
+        
+
+        delete this.form.value.uid
+  
+        this.firebaseSvc.updateDocument(path, this.form.value).then( async res => {
+
+          this.utilsSvc.dismissModal({success: true});
+
+          this.utilsSvc.presentToast({
+            message: 'Vehículo actualizado', 
             duration: 1500,
             color: 'success',
             position: 'middle',
@@ -78,9 +136,9 @@ export class AddUpdateVehicleComponent  implements OnInit {
 
         }) 
   
-        
-      }
     }
+
+    
 
 
   dismissModal(){
