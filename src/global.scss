@@ -33,7 +33,7 @@
  */
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */ 
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -90,7 +90,7 @@ ion-button {
 }
 
 // safe padding for ios
-.safe-p-bottom{
+.safe-p-bottom {
     padding-bottom: constant(safe-area-inset-bottom); // for ios 13+
     padding-bottom: env(safe-area-inset-bottom); // for previous ios versions
 }
@@ -104,7 +104,7 @@ ion-button {
     height: 30px;
 }
 
-.submit ion-icon{
+.submit ion-icon {
     width: 25px;
 }
 
@@ -199,8 +199,20 @@ ion-button {
     }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'SpaceMono';
+    src: url('assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+}
 
-.Montserrat{
+@font-face {
+    font-family: 'Montserrat';
+    src: url('assets/fonts/MontSerrat-VariableFont_wght.ttf') format('truetype');
+}
+
+.Montserrat {
     font-family: Montserrat, serif;
+}
+
+.SpaceMono {
+    font-family: SpaceMono, serif;
 }
