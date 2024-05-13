@@ -27,7 +27,11 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule), canActivate: [NoAuthGuard]
+  },  {
+    path: 'garage',
+    loadChildren: () => import('./garage/garage.module').then( m => m.GaragePageModule)
   }
+
 
 
 
