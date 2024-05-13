@@ -29,6 +29,10 @@ export class TabsPage {
     this.router.navigate(['/home']);
   }
 
+  navigateToGarage() {
+    this.router.navigate(['/garage']);
+  }
+
   singOut(){
     this.firebaseSvc.singOut();
   }
