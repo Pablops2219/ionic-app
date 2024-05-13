@@ -6,6 +6,7 @@ import { BarcodeScanner, LensFacing } from '@capacitor-mlkit/barcode-scanning';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { UserService} from '../services/user.service';
 
+
 import html2canvas from 'html2canvas';
 import { Share } from '@capacitor/share';
 import { FirebaseService } from '../services/firebase.service';
