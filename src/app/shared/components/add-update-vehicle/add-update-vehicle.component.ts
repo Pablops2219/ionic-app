@@ -39,7 +39,7 @@ export class AddUpdateVehicleComponent  implements OnInit {
     //Hacer o seleccionar foto
     
     async takeImage(){
-      const dataUrl = await (await this.utilsSvc.takePicture('Imagen del vehiculo')).dataUrl;
+      const dataUrl = (await this.utilsSvc.takePicture('Imagen del vehiculo')).dataUrl;
       this.form.controls.image.setValue(dataUrl);
     }
 
@@ -65,7 +65,7 @@ export class AddUpdateVehicleComponent  implements OnInit {
 
         // Subir imagen y obtener URL
         let dataUrl = this.form.value.image;
-        let imagePath = `${this.user.uid}/${Date.now}`;
+        let imagePath = `${this.user.uid}/${Date.now()}`;
         let imageUrl = await this.firebaseSvc.uploadImage(imagePath, dataUrl);
         this.form.controls.image.setValue(imageUrl);
 

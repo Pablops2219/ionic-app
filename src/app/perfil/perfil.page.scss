@@ -69,10 +69,6 @@ ion-content {
   }
 
 
-  .swiper{
-    
-  }
-
   .tituloLogro{
     color: black;
     margin: 15px;
@@ -255,3 +251,40 @@ ion-segment{
   border-radius: 0;
   margin: 0;
 }
+
+.token{
+  width: 22px;
+  height: auto;
+}
+
+.Info-tokens{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px
+}
+
+.info-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:1px;
+}
+
+.info-icon ion-avatar{
+  width: 120px;
+  height: 120px;
+}
+
+.bottom-image{
+    margin-top: 40px;
+    background-color: white;
+    color: rgb(255, 123, 0);
+    border-radius: 200px;
+    margin-top: 0px;
+    height: 30px;
+    padding: 0px;
+}
+
+

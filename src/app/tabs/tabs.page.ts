@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 import { FirebaseService } from '../services/firebase.service';
 import { UtilsService } from '../services/utils.service';
 
@@ -36,4 +37,5 @@ export class TabsPage {
   singOut(){
     this.firebaseSvc.singOut();
   }
+
 }

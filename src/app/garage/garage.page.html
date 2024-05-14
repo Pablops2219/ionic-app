@@ -6,11 +6,11 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-list>
+  <ion-list *ngIf="!loading">
     <ion-item-sliding class="product-item" *ngFor="let vehicle of vehicles">
       <ion-item>
         <div class="vehicle">
-          <ion-avatar class="image-vehicle">
+          <ion-avatar class="image-vehicle" *ngIf="vehicle.image">
             <img [src]="vehicle.image" />
           </ion-avatar>
           <div>
@@ -46,6 +46,31 @@
 
     </ion-item-sliding>
   </ion-list>
+
+  <!--====== Loading ======-->
+  <ion-list *ngIf="loading">
+    <ion-item class="product-item" *ngFor="let vehicle of [1,1,1]">
+      <div class="vehicle">
+        <ion-avatar class="image-vehicle">
+          <ion-skeleton-text animated style="width: 100%; height: 100%;"></ion-skeleton-text>
+        </ion-avatar>
+        <div>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!--En caso de no haber vehiclos-->
+  <div *ngIf="!loading && vehicles.length === 0" class="empty">
+    <ion-icon name="shield-outline"></ion-icon>
+    <h3>No tiene vehiculos registrados</h3>
+  </div>
 
   <!-- ==== Botón nuevo vehiculo ====  -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

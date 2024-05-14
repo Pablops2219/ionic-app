@@ -16,26 +16,34 @@
   <ion-card class="profile-container">
 
     <div class="profile-content">
-      <ion-avatar>
-        <img src={{users[0].icon}} alt="" />
-      </ion-avatar>
+      <div class="info-icon">
+        <ion-avatar>
+          <img [src]="user()?.icon" />
+        </ion-avatar>
+        <ion-button class="bottom-image" (click)="takeImage()" expand="block" fill="clear" shape="round">
+          <ion-icon name="camera-outline"></ion-icon>
+        </ion-button>
+      </div>
 
       <div class="profile-name">
         <ion-label>
-          <ion-text color="light">{{users[0].name}}</ion-text> <br>
-          <ion-text style="font-size: 17px;">{{users[0].last_name}}</ion-text>
+          <ion-text color="light">{{user().name}}</ion-text> <br>
+          <ion-text style="font-size: 17px;">{{user().last_name}}</ion-text>
         </ion-label>
       </div>
       <div class="profile-coches">
         <ion-label>
-          <ion-text>2</ion-text> <br>
+          <ion-text>{{vehicles.length}}</ion-text> <br>
           <ion-text style="font-size: 17px;">Vehiculos</ion-text>
         </ion-label>
       </div>
       <div class="profile-coins">
         <ion-label>
-          <ion-text>{{users[0].coins}}</ion-text> <br>
-          <ion-text style="font-size: 17px;">Monedas</ion-text>
+          <div class="Info-tokens">
+            <ion-text>{{user()?.coins}}</ion-text> <img
+              src="../../assets/images/Diseño_sin_título__5_-removebg-preview.png" class="token" alt=""><br>
+          </div>
+          <ion-text style="font-size: 17px;">Tokens</ion-text>
         </ion-label>
       </div>
     </div>

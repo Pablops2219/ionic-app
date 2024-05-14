@@ -16,6 +16,7 @@ export class GaragePage implements OnInit {
   utilsSvc = inject(UtilsService);
 
   vehicles: Vehicle[] = [];
+  loading: boolean = false;
   
   constructor() { }
 
@@ -49,11 +50,12 @@ export class GaragePage implements OnInit {
   //======== Obtener vehiculos ========
   getVehicles(){
     let path = `users/${this.user().uid}/vehicles`
-
+    this.loading = true;
     let sub = this.firebaseSvc.getCollectionData(path).subscribe({
       next: (res : any) => {
         console.log(res);
         this.vehicles = res;
+        this.loading = false;
         sub.unsubscribe();
       }
     })
@@ -65,6 +67,7 @@ export class GaragePage implements OnInit {
     this.utilsSvc.presentAlert({
       header: 'Eliminar vehiculo',
       message: '¿Deseas eliminar este vehículo?',
+      mode: 'ios',
       buttons: [
         {
           text: 'Cancelar',
