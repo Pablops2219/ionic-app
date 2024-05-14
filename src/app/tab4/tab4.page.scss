@@ -1,33 +1,23 @@
 ion-icon{
-    color: white;
+  color: white;
 }
 ion-menu-button{
-    color: white;
+  color: white;
 }
 .cartaEvento p{
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ion-card-title{
-    color: rgb(205, 133, 16);
-    font-size: 25px;
-    
+  color: rgb(205, 133, 16);
+  font-size: 25px;
+  
 }
 
 .evento {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .evento img {
-    width: 45%;
-    object-fit: cover; /* Asegura que la imagen cubra completamente su área sin distorsionar */
-  }
-  
-  .fila {
-    display: flex;
-    flex-direction: row;
-  }
+  display: flex;
+  flex-direction: row;
+}
 
   .eventIMG{
     width: auto;
@@ -45,31 +35,66 @@ ion-card-title{
   .contenido h3{
       font-size: 18px;
   }
-.textoSegment{
-  font-size: 18px;
-  font-weight: 800;
-  font-family: Montserrat, serif;
+.evento img {
+  width: 45%;
+  object-fit: cover; /* Asegura que la imagen cubra completamente su área sin distorsionar */
 }
-  
-.Info-tokens{
+
+.fila {
   display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 5px;
+  flex-direction: row;
+}
+
+.fila img{
+  width: auto;
+  max-width: 40%;
+    padding: 5px;
+    padding-right: 0;
+    border-radius: 9px;
+}
+
+.contenido {
+  flex-grow: 1;
+  padding-left: 10px; /* Añade un poco de espacio entre la imagen y el contenido */
+}
+
+.contenido h3{
+    font-size: 18px;
+}
+
+.inLive b{
+color: rgb(216, 4, 4);
+}
+
+.inLive {
+border: 1px solid rgba(168, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
+}
+
+.textoSegment{
+font-size: 18px;
+font-weight: 800;
+font-family: Montserrat, serif;
+}
+
+.Info-tokens{
+display: flex;
+align-items: center;
+gap: 5px;
+margin-top: 5px;
 }
 
 .Info-tokens p{
-  font-size: 18px;
+font-size: 18px;
 }
 
 .token{
-  width: 22px;
-  height: auto;
-  margin-bottom: 7px;
+width: 22px;
+height: auto;
+margin-bottom: 7px;
 }
 
 .contenido b{
-  color: rgb(255, 136, 0);
+color: rgb(255, 136, 0);
 }
 
 .cartaEvento{

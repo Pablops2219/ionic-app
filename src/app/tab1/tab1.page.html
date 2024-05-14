@@ -1,25 +1,27 @@
 <div class="ion-page" id="main-content">
   
 
-  
+
 
   <ion-content padding="sm">
 
-    
-  <ion-label class="TituloTab">Hola {{user().name}}!</ion-label> 
+
+    <!--<ion-label class="TituloTab">Hola {{users[0].name}}!</ion-label> -->
 
 
     <swiper-container pagination-dynamic-bullets="true">
       <swiper-slide>
         <ion-card>
-          <img class="noticiaIMG" src="https://binn.wpenginepowered.com/wp-content/uploads/2023/03/Ferrari-Challenge-Circuit-Ricardo-Tormo-Eliseo-Donno-accion-1-2048x1365.jpg" />
+          <img class="noticiaIMG"
+            src="https://binn.wpenginepowered.com/wp-content/uploads/2023/03/Ferrari-Challenge-Circuit-Ricardo-Tormo-Eliseo-Donno-accion-1-2048x1365.jpg" />
           <ion-card-header>
             <ion-card-title>Ferrari Challenge</ion-card-title>
           </ion-card-header>
 
           <ion-card-content>
             <p>
-              El Ferrari Challenge Trofeo Pirelli ha sido seleccionada como la serie oficial monomarca que se unirá a los FIA Motorsport Games...
+              El Ferrari Challenge Trofeo Pirelli ha sido seleccionada como la serie oficial monomarca que se unirá a
+              los FIA Motorsport Games...
             </p>
           </ion-card-content>
         </ion-card>
@@ -27,20 +29,23 @@
       <swiper-slide>
 
         <ion-card>
-          <img class="noticiaIMG" src="https://binn.wpenginepowered.com/wp-content/uploads/2022/03/web-curva-Bernat-Martinez-8.jpg" />
+          <img class="noticiaIMG"
+            src="https://binn.wpenginepowered.com/wp-content/uploads/2022/03/web-curva-Bernat-Martinez-8.jpg" />
           <ion-card-header>
             <ion-card-title>Las Curvas del Circuit Ricardo Tormo una a una</ion-card-title>
           </ion-card-header>
 
           <ion-card-content>
-            Iniciamos una serie de vídeos sobre las curvas del Circuit Ricardo Tormo en la que veremos todo su esplendor...
+            Iniciamos una serie de vídeos sobre las curvas del Circuit Ricardo Tormo en la que veremos todo su
+            esplendor...
           </ion-card-content>
         </ion-card>
       </swiper-slide>
       <swiper-slide>
 
         <ion-card>
-          <img class="noticiaIMG" src="https://binn.wpenginepowered.com/wp-content/uploads/2024/05/VOLRACE-51-2048x1437.jpg" />
+          <img class="noticiaIMG"
+            src="https://binn.wpenginepowered.com/wp-content/uploads/2024/05/VOLRACE-51-2048x1437.jpg" />
           <ion-card-header>
             <ion-card-title>Drift, batallas y pasión en Volrace Drift</ion-card-title>
           </ion-card-header>
@@ -52,7 +57,7 @@
       </swiper-slide>
 
     </swiper-container>
-    
+
     <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
       (click)="navigateToStreaming()"> 
       

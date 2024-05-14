@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';  
+import { Component, inject, OnInit, ElementRef ,ViewChild} from '@angular/core';  
 import { EventService } from '../services/event/event.service';
 import { Router } from '@angular/router';
 import { LoadingController, Platform } from '@ionic/angular';
@@ -7,6 +7,12 @@ import { Share } from '@capacitor/share';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { ComunityService } from '../services/community/comunity.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
+import { UtilsService } from '../services/utils/utils.service';
+import { User } from '../models/user.model';
+import { Vehicle } from '../models/vehicle.module';
+import { AddUpdateVehicleComponent } from '../shared/components/add-update-vehicle/add-update-vehicle.component';
+import { CommunityEventsComponent } from '../shared/components/community-events/community-events.component';
 
 
 
@@ -20,31 +26,14 @@ export class Tab4Page {
 
   segment= 'eventos';
 
+  vehicles: Vehicle[] = [];
+
+
+  firebaseSvc = inject(FirebaseService);
+  utilsSvc = inject(UtilsService);
+
   events: any[];
   comunitys: any[];
-
-  public actionSheetButtons = [
-    {
-      text: 'Delete',
-      role: 'destructive',
-      data: {
-        action: 'delete',
-      },
-    },
-    {
-      text: 'Share',
-      data: {
-        action: 'share',
-      },
-    },
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      data: {
-        action: 'cancel',
-      },
-    },
-  ];
   
   constructor(
     public eventService: EventService,
@@ -55,7 +44,65 @@ export class Tab4Page {
     this.events = this.eventService.getEvents();
     this.comunitys = this.comunityService.getEvents();
   }
+
+  async addUpdateVehicle(vehicle?: Vehicle){
+
+    let success = await this.utilsSvc.presentModal({
+      component: AddUpdateVehicleComponent,
+      cssClass: 'add-update-modal',
+      componentProps: {vehicle}
+    })
+
+    if(success){
+      this.getVehicles();
+    }
+    
+  }
   
+  user(): User{
+    return this.utilsSvc.getFromLocalStorage('user');
+  }
+
+  ionViewWillEnter() {
+    this.getVehicles(); 
+  }
+
+  getVehicles(){
+    let path = `users/${this.user().uid}/vehicles`
+    let sub = this.firebaseSvc.getCollectionData(path).subscribe({
+      next: (res : any) => {
+        console.log(res);
+        this.vehicles = res;
+        sub.unsubscribe();
+      }
+    })
+  }
+
+  typeEvent(comunity: any) {
+    const desiredEventTitle = comunity.title; // Título del evento que quieres verificar
+    const desiredSubstring = 'ncuesta'; // Subcadena que deseas encontrar en el título
+
+    const event = this.comunitys.find((e) => e.title === desiredEventTitle);
+
+    if (event.title.includes(desiredSubstring)) {
+      // Si se encuentra el evento y el título contiene la subcadena deseada
+      console.log(`El evento contiene "${desiredSubstring}"`);
+
+    } else {
+      console.log(`El evento no contiene "${desiredSubstring}"`);
+      this.partipateWithVehicle();
+    }
+  }
+
+
+
+  async partipateWithVehicle(){
+
+     await this.utilsSvc.presentModal({
+      component: CommunityEventsComponent,
+      cssClass: 'add-update-modal',
+    })
+  }
 
   ngAfterViewInit() {
   }

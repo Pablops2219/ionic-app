@@ -21,12 +21,10 @@ export class Tab1Page {
   constructor(
     public eventService: EventService,
     private router: Router,
-    private userService: UserService
     
   ) {}
 
   ngOnInit() {
-    this.users = this.userService.getUsers();
     this.events = this.eventService.getEvents();
   }
 

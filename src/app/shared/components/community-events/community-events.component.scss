@@ -1,0 +1,29 @@
+/* Estilo para el contenedor de cada vehículo (tarjeta) */
+.vehicle-card {
+    display: flex;
+    justify-content: space-between; /* Alinear elementos hacia los extremos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el contenedor de detalles del vehículo */
+  .vehicle-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear elementos a la izquierda */
+    flex: 1; /* Ocupar espacio restante */
+    padding: 10px;
+    gap: 5px;
+  }
+  
+  /* Estilo para la imagen del vehículo dentro de la tarjeta */
+  .vehicle-image {
+    width: 40%;
+    margin-right: 6px;
+  }
+
+  .vehicle-image img {
+    border-radius: 15px;
+  }
+  
