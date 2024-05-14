@@ -38,4 +38,40 @@ export class TabsPage {
     this.firebaseSvc.singOut();
   }
 
+  user(): User{
+    return this.utilsSvc.getFromLocalStorage('user');
+  }
+ 
+  openYouTube() {
+    const youtubeChannelUrl = 'https://www.youtube.com/@CircuitRicardoTormo';
+    const encodedUrl = encodeURIComponent(youtubeChannelUrl);
+    window.open(encodedUrl, '_blank');
+  }
+  
+  openTwitter() {
+    const youtubeChannelUrl = 'https://twitter.com/circuitvalencia?lang=es';
+    const encodedUrl = encodeURIComponent(youtubeChannelUrl);
+    window.open(encodedUrl, '_blank');
+  }
+
+  openFacebook() {
+    const youtubeChannelUrl = 'https://www.facebook.com/CircuitRicardoTormoOficial/?locale=es_ES';
+    const encodedUrl = encodeURIComponent(youtubeChannelUrl);
+    window.open(encodedUrl, '_blank');
+  }
+
+  openTwitch() {
+    const youtubeChannelUrl = 'https://www.facebook.com/CircuitRicardoTormoOficial/?locale=es_ES';
+    const encodedUrl = encodeURIComponent(youtubeChannelUrl);
+    window.open(encodedUrl, '_blank');
+  }
+
+  openInstagram(){
+    const youtubeChannelUrl = 'https://www.instagram.com/circuitvalencia/?hl=es';
+    const encodedUrl = encodeURIComponent(youtubeChannelUrl);
+    window.open(encodedUrl, '_blank');
+  }
+
+  
+
 }

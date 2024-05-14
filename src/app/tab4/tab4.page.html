@@ -84,12 +84,10 @@
           <div class="contenido">
             <h3>{{ comunity.title }}</h3>
             <b>{{ comunity.reward }} tokens</b>
-            <p>{{ comunity.date }}</p>
-            <ion-fab class="bottom-participar" vertical="bottom" horizontal="end" slot="fixed">
-              <ion-fab-button class="bottom-participar" (click)="typeEvent(comunity)">
-                <p>Participar</p>
-              </ion-fab-button>
-            </ion-fab>
+            <p>{{ comunity.date }} <ion-button class="custom-button" (click)="typeEvent(comunity)" fill="outline">
+                Participar</ion-button>
+            </p>
+
 
           </div>
         </div>

@@ -1,8 +1,7 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from '../services/event.service';
-import { UserService} from '../services/user.service';
-import { User } from '../models/user.model';
+
 
 @Component({
   selector: 'app-tab1',
@@ -12,17 +11,14 @@ import { User } from '../models/user.model';
 
 export class Tab1Page {
   events: any[] = [];
-  users: any[] = [];
 
   constructor(
     public eventService: EventService,
     private router: Router,
-    private userService: UserService
     
   ) {}
 
   ngOnInit() {
-    this.users = this.userService.getUsers();
     this.events = this.eventService.getEvents();
   }
 
