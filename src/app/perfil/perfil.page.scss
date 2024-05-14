@@ -11,6 +11,7 @@ ion-content {
 
 
 .profile-content {
+  justify-content: space-around;
   font-weight: 600;
   font-family: 'Montserrat', serif;
   align-items: flex-end;
@@ -33,7 +34,7 @@ ion-content {
 
   .profile-name ion-label ion-text{
     color: rgb(255, 255, 255);
-    font-size:22px;
+    font-size:18px;
   }
 
   .profile-coches{
@@ -46,7 +47,7 @@ ion-content {
 
   .profile-coches ion-label ion-text{
     color: rgb(255, 255, 255);
-    font-size:22px;
+    font-size:18px;
   }
 
   .profile-coins{
@@ -59,7 +60,7 @@ ion-content {
 
   .profile-coins ion-label ion-text{
     color: rgb(255, 255, 255);
-    font-size:22px;
+    font-size:18px;
   }
   
   .profile-container{

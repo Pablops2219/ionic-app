@@ -12,15 +12,17 @@ import { User } from '../models/user.model';
 
 export class Tab1Page {
   events: any[] = [];
-  users: User[] = [];
+  users: any[] = [];
 
   constructor(
     public eventService: EventService,
     private router: Router,
+    private userService: UserService
     
   ) {}
 
   ngOnInit() {
+    this.users = this.userService.getUsers();
     this.events = this.eventService.getEvents();
   }
 
