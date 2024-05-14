@@ -29,7 +29,7 @@ ion-card-title{
     flex-direction: row;
   }
 
-  .fila img{
+  .eventIMG{
     width: auto;
     max-width: 40%;
       padding: 5px;
@@ -45,15 +45,6 @@ ion-card-title{
   .contenido h3{
       font-size: 18px;
   }
-  
-.inLive b{
-  color: rgb(216, 4, 4);
-}
-
-.inLive {
-  border: 1px solid rgba(168, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
-}
-
 .textoSegment{
   font-size: 18px;
   font-weight: 800;
@@ -81,3 +72,46 @@ ion-card-title{
   color: rgb(255, 136, 0);
 }
 
+.cartaEvento{
+  width: 100%;
+  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 0;
+}
+
+.inLive {
+  border: 2px solid rgba(168, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
+}
+
+.card-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+ion-chip {
+  --background: #ff0000  !important;
+  --color: #ffffff;
+}
+
+
+.precioContainer{
+  font-weight: 700;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+#participar{
+  --background:#ff8c007a;
+}
+
+#generate-pdf-btn{
+  --background:#ff8c007a;
+}
+
+.token{
+  max-width: 20px;
+}

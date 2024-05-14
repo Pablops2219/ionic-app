@@ -1,12 +1,12 @@
 import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';  
-import { EventService } from '../services/event.service';
+import { EventService } from '../services/event/event.service';
 import { Router } from '@angular/router';
 import { LoadingController, Platform } from '@ionic/angular';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
-import { ComunityService } from '../services/comunity.service';
+import { ComunityService } from '../services/community/comunity.service';
 
 
 

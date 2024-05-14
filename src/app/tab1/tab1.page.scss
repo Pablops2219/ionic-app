@@ -39,7 +39,7 @@ swiper-slide {
 }
 
 .inLive {
-  border: 1px solid rgba(168, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
+  border: 2px solid rgba(227, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
 }
 
 .evento {
@@ -91,4 +91,15 @@ swiper-slide {
 
 .imgEvent{
   max-width: 30%;
+}
+
+.card-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+ion-chip {
+  --background: #ff0000  !important;
+  --color: #ffffff;
 }

@@ -37,6 +37,10 @@ const routes: Routes = [
         loadChildren: () => import('../tab6/tab6.module').then( m => m.Tab6PageModule)
       },
       {
+        path: 'notificaciones',
+        loadChildren: () => import('../notificaciones/notificaciones.module').then( m => m.NotificacionesPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

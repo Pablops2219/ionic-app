@@ -1,8 +1,8 @@
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree} from '@angular/router';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FirebaseService } from '../services/firebase.service';
-import { UtilsService } from '../services/utils.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
+import { UtilsService } from '../services/utils/utils.service';
 
 @Injectable({
     providedIn: 'root'

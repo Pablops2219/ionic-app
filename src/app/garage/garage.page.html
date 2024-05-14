@@ -6,31 +6,43 @@
 
 <ion-content [fullscreen]="true">
 
+  
+  <ion-label class="TituloTab">Mis coches</ion-label> 
+
   <ion-list *ngIf="!loading">
+
     <ion-item-sliding class="product-item" *ngFor="let vehicle of vehicles">
       <ion-item>
-        <div class="vehicle">
-          <ion-avatar class="image-vehicle" *ngIf="vehicle.image">
+        <ion-card class="vehicle">
+          <div class="image-vehicle" *ngIf="vehicle.image">
             <img [src]="vehicle.image" />
-          </ion-avatar>
-          <div>
-            <ion-label>
-              Matricula: {{vehicle.license_plate}}
-            </ion-label>
-            <ion-label>
-              Marca: {{vehicle.make}}
-            </ion-label>
-            <ion-label>
-              Modelo: {{vehicle.model}}
-            </ion-label>
-            <ion-label>
-              Año: {{vehicle.year}}
-            </ion-label>
-            <ion-label>
-              Color: {{vehicle.color}}
-            </ion-label>
           </div>
-        </div>
+          <div class="vehicle-info">
+            <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+              <ion-fab-button>
+                <ion-icon name="star-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <ion-card-header class="Montserrat">
+              {{vehicle.license_plate}}
+            </ion-card-header>
+            <div class="vehicle-brand">
+              <ion-label>
+                Marca: <br>{{vehicle.make}}
+              </ion-label>
+              <ion-label>
+                Modelo: <br>{{vehicle.model}}
+              </ion-label>
+
+              <ion-label>
+                Año: <br>{{vehicle.year}}
+              </ion-label>
+              <ion-label>
+                Color: <br>{{vehicle.color}}
+              </ion-label>
+            </div>
+          </div>
+        </ion-card>
       </ion-item>
       <ion-item-options>
 
@@ -46,6 +58,9 @@
 
     </ion-item-sliding>
   </ion-list>
+
+
+
 
   <!--====== Loading ======-->
   <ion-list *ngIf="loading">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PromotionsService } from '../services/promotions.service';
+import { PromotionsService } from '../services/promotions/promotions.service';
 
 @Component({
   selector: 'app-tab5',

@@ -8,8 +8,8 @@ import { Directory, Filesystem } from '@capacitor/filesystem';
 
 import html2canvas from 'html2canvas';
 import { Share } from '@capacitor/share';
-import { FirebaseService } from '../services/firebase.service';
-import { UtilsService } from '../services/utils.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
+import { UtilsService } from '../services/utils/utils.service';
 import { User } from '../models/user.model';
 import { Vehicle } from '../models/vehicle.module';
 

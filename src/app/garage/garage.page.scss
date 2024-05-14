@@ -1,20 +1,62 @@
-.vehicle{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    width: 97%;
-    margin: 0 auto;
-    border-radius: 2px;
+ ion-card{
+    
+    width: 100%;
+    margin-bottom: 40px;
     border: 1px solid rgb(255, 144, 58);
+    border-radius: 10px;
 }
 
 .image-vehicle{
     width: 100%;
     height: auto;
     margin: 0 auto;
-    border-radius: 0px;
+}
+
+.image-vehicle img{
+    width: 100%;
+    height: 100%;
 }
 
 ion-content{
     --padding-bottom: 70px;
 }
+
+.ion-card
+{
+    height: 600px;
+}
+
+.vehicle-info{
+    display: flex;
+    flex-flow: column;
+}
+
+.vehicle-brand{
+    justify-content: space-around;
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 10px;
+}
+
+.vehicle-brand ion-label{
+    margin: 0 10px;
+    font-size: 15px;
+}
+
+ion-card-header{
+    color: black;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 10px 20px;
+}
+
+.TituloTab{
+    font-family: Montserrat, serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 30px;
+  }
+
+  ion-fab{
+    transform: translateY(-60px);
+  }

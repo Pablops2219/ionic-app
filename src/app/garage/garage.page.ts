@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { UtilsService } from '../services/utils.service';
+import { UtilsService } from '../services/utils/utils.service';
 import { AddUpdateVehicleComponent } from '../shared/components/add-update-vehicle/add-update-vehicle.component';
 import { User } from '../models/user.model';
-import { FirebaseService } from '../services/firebase.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
 import { Vehicle } from '../models/vehicle.module';
 
 @Component({

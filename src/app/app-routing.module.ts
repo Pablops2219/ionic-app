@@ -30,6 +30,10 @@ const routes: Routes = [
   },  {
     path: 'garage',
     loadChildren: () => import('./garage/garage.module').then( m => m.GaragePageModule)
+  },
+  {
+    path: 'notificaciones',
+    loadChildren: () => import('./notificaciones/notificaciones.module').then( m => m.NotificacionesPageModule)
   }
 
 

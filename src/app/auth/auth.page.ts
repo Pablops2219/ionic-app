@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../models/user.model';
-import { FirebaseService } from '../services/firebase.service';
-import { UtilsService } from '../services/utils.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
+import { UtilsService } from '../services/utils/utils.service';
 
 @Component({
   selector: 'app-auth',
@@ -55,7 +55,7 @@ export class AuthPage implements OnInit {
         this.utilsSvc.saveInLocalStorage('user', user);
         this.utilsSvc.routerLink('/tabs/tab1');
         this.form.reset();
-        this.utilsSvc.presentToast({message: `Bienvenido ${user.name}`, duration: 2000, color: 'tertiary', position:'middle', icon:'person-circle-outline'})
+        this.utilsSvc.presentToast({message: `Bienvenido ${user.name}`, duration: 2000, color: 'tertiary', icon:'person-circle-outline'})
 
       }).catch(error => {
         console.log(error);

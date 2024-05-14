@@ -1,24 +1,12 @@
 <div class="ion-page" id="main-content">
-  <ion-header>
-    <ion-buttons slot="start" color="dark">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
-    <ion-buttons>
-      <ion-button color="light" size="large" (click)="navigateToPerfil()">
-        <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
-
-  </ion-header>
+  
 
   
 
   <ion-content padding="sm">
 
     
-  <ion-label class="TituloTab">Hola {{users[0].name}}!</ion-label> 
+  <ion-label class="TituloTab">Hola {{user().name}}!</ion-label> 
 
 
     <swiper-container pagination-dynamic-bullets="true">
@@ -66,16 +54,19 @@
     </swiper-container>
     
     <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
-      (click)="navigateToStreaming()">
+      (click)="navigateToStreaming()"> 
+      
       <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
-      <ion-card-header>
-        <ion-card-title>{{ event.title }}</ion-card-title>
 
+      <ion-card-header class="card-header">
+        <ion-card-title>{{ event.title }}</ion-card-title>
+        <ion-chip mode="ios">
+          <ion-label>En directo</ion-label>
+        </ion-chip>
       </ion-card-header>
 
       <ion-card-content>
         <p>{{ event.description }}</p>
-        <b>En directo</b>
       </ion-card-content>
     </ion-card>
 

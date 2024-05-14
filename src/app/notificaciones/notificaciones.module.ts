@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GaragePageRoutingModule } from './garage-routing.module';
+import { NotificacionesPageRoutingModule } from './notificaciones-routing.module';
 
-import { GaragePage } from './garage.page';
+import { NotificacionesPage } from './notificaciones.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GaragePageRoutingModule
+    NotificacionesPageRoutingModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [GaragePage]
+  declarations: [NotificacionesPage],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class GaragePageModule { }
+export class NotificacionesPageModule {}

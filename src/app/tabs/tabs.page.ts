@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
-import { FirebaseService } from '../services/firebase.service';
-import { UtilsService } from '../services/utils.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
+import { UtilsService } from '../services/utils/utils.service';
 
 @Component({
   selector: 'app-tabs',
@@ -20,6 +20,10 @@ export class TabsPage {
 
   navigateToStreaming() {
     this.router.navigate(['/streaming']);
+  }
+
+  navigateToNotificaciones() {
+    this.router.navigate(['/notificaciones']);
   }
 
   navigateToPerfil() {

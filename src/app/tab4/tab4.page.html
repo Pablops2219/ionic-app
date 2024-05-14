@@ -18,15 +18,18 @@
   <div *ngIf="segment === 'eventos'">
     <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
       (click)="navigateToStreaming()">
-      <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
-      <ion-card-header>
-        <ion-card-title>{{ event.title }}</ion-card-title>
 
+      <img src="{{ event.srcimg }}" />
+
+      <ion-card-header class="card-header">
+        <ion-card-title>{{ event.title }}</ion-card-title>
+        <ion-chip mode="ios">
+          <ion-label>En directo</ion-label>
+        </ion-chip>
       </ion-card-header>
 
       <ion-card-content>
         <p>{{ event.description }}</p>
-        <b>En directo</b>
       </ion-card-content>
     </ion-card>
 
@@ -39,7 +42,7 @@
     <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
       <ng-container>
         <div class="fila">
-          <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
+          <img class="eventIMG" src="{{ event.srcimg }}" />
           <div class="contenido">
             <h3>{{ event.title }}</h3>
             <p>{{ event.date }}</p>
@@ -55,19 +58,22 @@
 
   <div *ngIf="segment === 'eventos-comunidad'">
     <ion-card class="cartaEvento inLive" *ngFor="let comunity of comunityService.getEventsLive()">
-      <img alt="Silhouette of mountains" src="{{ comunity.srcimg }}" />
-      <ion-card-header>
+      <img src="{{ comunity.srcimg }}" />
+      <ion-card-header class="card-header">
         <ion-card-title>{{ comunity.title }}</ion-card-title>
-
+        <ion-chip mode="ios">
+          <ion-label>En directo</ion-label>
+        </ion-chip>
       </ion-card-header>
 
       <ion-card-content>
-        <p>{{ comunity.description }}</p>
-        <div class="Info-tokens">
+        <ion-card-subtitle class="precioContainer">
           <p>{{ comunity.reward }}</p>
-          <img src="../../assets/images/Diseño_sin_título__5_-removebg-preview.png" class="token" alt="">
+          <img src="assets/images/coin.png" class="token" alt="">
+        </ion-card-subtitle>
+        <p>{{ comunity.description }}</p>
+        <div class="Info-tokens ">
         </div>
-        <b>Disputándose</b>
       </ion-card-content>
     </ion-card>
 
@@ -80,10 +86,13 @@
     <ion-card class="cartaEvento evento" *ngFor="let comunity of comunityService.getEvents()">
       <ng-container>
         <div class="fila">
-          <img alt="Silhouette of mountains" src="{{ comunity.srcimg }}" />
+          <img class="eventIMG" src="{{ comunity.srcimg }}" />
           <div class="contenido">
             <h3>{{ comunity.title }}</h3>
-            <b>{{ comunity.reward }} tokens</b>
+            <div class="precioContainer">
+              <b>{{ comunity.reward }} </b>
+              <img src="assets/images/coin.png" class="token" alt="">
+            </div>
             <p>{{ comunity.date }}</p>
             <ion-button id="participar" expand="block" fill="clear" shape="round">
               Participar

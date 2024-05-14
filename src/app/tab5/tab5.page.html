@@ -1,56 +1,36 @@
-<ion-menu contentId="main-content">
-  <ion-header>
-    <ion-title>Menu Content</ion-title>
-  </ion-header>
-  <ion-content class="ion-padding">This is the menu content.</ion-content>
-</ion-menu>
-<div class="ion-page" id="main-content">
-  <ion-header>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-img src="https://nostresport.com/wp-content/uploads/2024/01/unnamed-2-696x311.png"></ion-img>
-    <ion-buttons>
-      <ion-button color="light" size="large">
-        <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+<ion-content [fullscreen]="true">
+  <ion-card class="cartaEvento">
+    <img  class="promoIMG" src="{{ promotions[0].srcimg }}" />
+    <ion-card-header>
+      <ion-card-title>{{ promotions[0].title }}</ion-card-title>
 
-  </ion-header>
+    </ion-card-header>
 
-  <ion-content [fullscreen]="true">
-    <ion-card class="cartaEvento">
-      <img alt="Silhouette of mountains" src="{{ promotions[0].srcimg }}" />
-      <ion-card-header>
-        <ion-card-title>{{ promotions[0].title }}</ion-card-title>
-
-      </ion-card-header>
-
-      <ion-card-content>
-        <p>{{ promotions[0].description }}</p>
-        <div class="precioContainer">
-          <p class="margin-fix">{{ promotions[0].precio }} </p>
-          <img class="moneda" src="../../assets/Diseño_sin_título__5_-removebg-preview.png" alt="">
-        </div>
-      </ion-card-content>
+    <ion-card-content>
+      <p>{{ promotions[0].description }}</p>
+      <ion-card-subtitle class="precioContainer">
+        {{promotions[0].precio}} monedas
+        <img class="moneda" src="assets/images/coin.png" alt="">
+      </ion-card-subtitle>
+    </ion-card-content>
 
 
-    </ion-card>
+  </ion-card>
 
-    <ion-card class="cartaEvento evento" *ngFor="let promotion of promotions; let i = index">
-      <ng-container *ngIf="i > 0">
-        <div class="fila">
-          <img alt="Silhouette of mountains" src="{{ promotion.srcimg }}" />
-          <div class="contenido">
-            <h3>{{ promotion.title }}</h3>
-            <p>{{ promotion.description }}</p>
-            <div class="precioContainer">
-              <p>{{ promotion.precio }} coins </p>
-              <img class="moneda" src="../../assets/Diseño_sin_título__5_-removebg-preview.png" alt="">
-            </div>
+  <ion-card class="cartaEvento evento" *ngFor="let promotion of promotions; let i = index">
+    <ng-container *ngIf="i > 0">
+      <div class="fila">
+        <img class="promoIMG" src="{{ promotion.srcimg }}" />
+        <div class="contenido">
+          <h3>{{ promotion.title }}</h3>
+          <p>{{ promotion.description }}</p>
+          <div class="precioContainer">
+            <p>{{ promotion.precio }} monedas </p>
+            <img class="moneda" src="assets/images/coin.png" alt="">
           </div>
         </div>
-      </ng-container>
-    </ion-card>
+      </div>
+    </ng-container>
+  </ion-card>
 
-  </ion-content>
+</ion-content>
