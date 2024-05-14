@@ -27,12 +27,22 @@ ion-menu-button{
     border: none; /* Eliminar el borde del iframe */
   }
 
-
+  .square {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    width: 200px;
+    height: 200px;
+    border: 6px solid white;
+    box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3);
+  }
   
   .search-bar {
+    position: absolute;
     align-items: center;
     display: flex;
-    position: fixed;
     z-index: 2; /* Asegura que la barra de búsqueda esté sobre el mapa */
     background-color: rgb(250, 192, 120);
     padding: 10px;
@@ -63,6 +73,11 @@ ion-menu-button{
     font-size: 14px;
   }
 
-  
+  #open-action-sheet{
+    bottom: 0;
+    right: 0; 
+    margin: 20px;
+  }
+
   
   

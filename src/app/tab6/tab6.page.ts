@@ -12,4 +12,5 @@ export class Tab6Page implements OnInit {
   ngOnInit() {
   }
 
+
 }
