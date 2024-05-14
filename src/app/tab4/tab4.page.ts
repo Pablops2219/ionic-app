@@ -6,6 +6,7 @@ import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
+import { ComunityService } from '../services/comunity.service';
 
 
 
@@ -20,13 +21,39 @@ export class Tab4Page {
   segment= 'eventos';
 
   events: any[];
+  comunitys: any[];
+
+  public actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
   
   constructor(
     public eventService: EventService,
+    public comunityService: ComunityService,
      private router: Router,
     private loadingController: LoadingController,
     private platform: Platform) {
     this.events = this.eventService.getEvents();
+    this.comunitys = this.comunityService.getEvents();
   }
   
 

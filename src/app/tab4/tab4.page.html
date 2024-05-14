@@ -7,7 +7,7 @@
 
   <ion-segment [(ngModel)]="segment">
     <ion-segment-button value="eventos">
-      <ion-label class="textoSegment">Eventos</ion-label> 
+      <ion-label class="textoSegment">Eventos</ion-label>
     </ion-segment-button>
     <ion-segment-button value="eventos-comunidad">
       <ion-label class="textoSegment">Comunidad</ion-label>
@@ -52,9 +52,50 @@
     </ion-card>
   </div>
 
-  
+
   <div *ngIf="segment === 'eventos-comunidad'">
-  
+    <ion-card class="cartaEvento inLive" *ngFor="let comunity of comunityService.getEventsLive()">
+      <img alt="Silhouette of mountains" src="{{ comunity.srcimg }}" />
+      <ion-card-header>
+        <ion-card-title>{{ comunity.title }}</ion-card-title>
+
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ comunity.description }}</p>
+        <div class="Info-tokens">
+          <p>{{ comunity.reward }}</p>
+          <img src="../../assets/images/Diseño_sin_título__5_-removebg-preview.png" class="token" alt="">
+        </div>
+        <b>Disputándose</b>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-item>
+      <ion-label>
+        <h1>Próximos eventos</h1>
+      </ion-label>
+    </ion-item>
+
+    <ion-card class="cartaEvento evento" *ngFor="let comunity of comunityService.getEvents()">
+      <ng-container>
+        <div class="fila">
+          <img alt="Silhouette of mountains" src="{{ comunity.srcimg }}" />
+          <div class="contenido">
+            <h3>{{ comunity.title }}</h3>
+            <b>{{ comunity.reward }} tokens</b>
+            <p>{{ comunity.date }}</p>
+            <ion-button id="participar" expand="block" fill="clear" shape="round">
+              Participar
+            </ion-button>
+            <ion-action-sheet trigger="participar" header="Selecciona el vehículo" [buttons]="actionSheetButtons">
+
+            </ion-action-sheet>
+
+          </div>
+        </div>
+      </ng-container>
+    </ion-card>
   </div>
 
 

@@ -11,18 +11,18 @@ ion-content {
 
 
 .profile-content {
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600;
   font-family: 'Montserrat', serif;
-  align-items: flex-end;
   padding: 10px;
   display: flex;
-    background: rgb(255, 136, 25);
-    border-radius: 0px 0px 20px 20px ;
-    width: 100%;
-    margin: 0 auto;
+  background: rgb(255, 136, 25);
+  border-radius: 0px 0px 20px 20px ;
+  width: 100%;
+  margin: 0 auto;
 
-  }
+}
   
   .profile-name{
     margin-bottom: 5px;
@@ -270,22 +270,19 @@ ion-segment{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap:1px;
 }
 
 .info-icon ion-avatar{
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 
 .bottom-image{
-    margin-top: 40px;
     background-color: white;
     color: rgb(255, 123, 0);
-    border-radius: 200px;
-    margin-top: 0px;
-    height: 30px;
-    padding: 0px;
+    position: relative;
+    bottom: 20px;
+    border-radius: 20px;
 }
 
 

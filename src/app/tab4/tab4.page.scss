@@ -60,4 +60,24 @@ ion-card-title{
   font-family: Montserrat, serif;
 }
   
+.Info-tokens{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.Info-tokens p{
+  font-size: 18px;
+}
+
+.token{
+  width: 22px;
+  height: auto;
+  margin-bottom: 7px;
+}
+
+.contenido b{
+  color: rgb(255, 136, 0);
+}
 
