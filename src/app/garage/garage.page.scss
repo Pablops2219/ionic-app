@@ -8,7 +8,6 @@
 
 .image-vehicle{
     width: 100%;
-    height: auto;
     margin: 0 auto;
 }
 
@@ -27,6 +26,10 @@ ion-content{
 }
 
 .vehicle-info{
+    font-weight: 500;
+    color: black;
+    // background-image: url(/assets/images/FONDOCHILL.png);
+    height: 100%;
     display: flex;
     flex-flow: column;
 }

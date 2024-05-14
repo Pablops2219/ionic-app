@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { Vehicle } from 'src/app/models/vehicle.module';
-import { FirebaseService } from 'src/app/services/firebase.service';
-import { UtilsService } from 'src/app/services/utils.service';
+import { FirebaseService } from 'src/app/services/firebase/firebase.service';
+import { UtilsService } from 'src/app/services/utils/utils.service';
 
 @Component({
   selector: 'app-community-events',

@@ -1,7 +1,6 @@
 import { Component, inject} from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from '../services/event/event.service';
-import { UserService} from '../services/user/user.service';
 import { User } from '../models/user.model';
 import { FirebaseService } from '../services/firebase/firebase.service';
 import { UtilsService } from '../services/utils/utils.service';

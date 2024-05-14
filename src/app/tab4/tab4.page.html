@@ -94,11 +94,11 @@
               <img src="assets/images/coin.png" class="token" alt="">
             </div>
             <p>{{ comunity.date }}</p>
-            <ion-button id="participar" expand="block" fill="clear" shape="round">
-              Participar
-            </ion-button>
-            <ion-action-sheet trigger="participar" header="Selecciona el vehículo">
-            </ion-action-sheet>
+            <ion-fab class="bottom-participar" vertical="bottom" horizontal="end" slot="fixed">
+              <ion-fab-button class="bottom-participar" (click)="typeEvent(comunity)">
+                <p>Participar</p>
+              </ion-fab-button>
+            </ion-fab>
 
 
           </div>
