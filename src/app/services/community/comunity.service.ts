@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ComunityService {
-  // Supongamos que tienes una lista de eventos
+  public participation: boolean = false;
+  public car_event: boolean = true;
+
   events = [
     { id: 1, 
       title: 'Evento de autos', 

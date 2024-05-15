@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,7 @@ import { Tab5Page } from './tab5.page';
     IonicModule,
     Tab5PageRoutingModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [Tab5Page]
 })
 export class Tab5PageModule {}

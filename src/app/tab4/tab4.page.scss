@@ -24,7 +24,6 @@ ion-card-title {
 .evento img {
   width: 45%;
   object-fit: cover;
-  /* Asegura que la imagen cubra completamente su área sin distorsionar */
 }
 
 .fila {
@@ -43,7 +42,6 @@ ion-card-title {
 .contenido {
   flex-grow: 1;
   padding-left: 10px;
-  /* Añade un poco de espacio entre la imagen y el contenido */
 }
 
 .contenido h3 {
@@ -53,7 +51,6 @@ ion-card-title {
 .evento img {
   width: 45%;
   object-fit: cover;
-  /* Asegura que la imagen cubra completamente su área sin distorsionar */
 }
 
 .fila {
@@ -72,7 +69,6 @@ ion-card-title {
 .contenido {
   flex-grow: 1;
   padding-left: 10px;
-  /* Añade un poco de espacio entre la imagen y el contenido */
 }
 
 .contenido h3 {
@@ -84,7 +80,7 @@ ion-card-title {
 }
 
 .inLive {
-  border: 1px solid rgba(168, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
+  border: 1px solid rgba(168, 4, 4, 0.697); 
 }
 
 .textoSegment {
@@ -123,7 +119,7 @@ ion-card-title {
 }
 
 .inLive {
-  border: 2px solid rgba(168, 4, 4, 0.697); // Aplica un borde sólido de 2px de ancho en color rojo
+  border: 2px solid rgba(168, 4, 4, 0.697);
 }
 
 .card-header {

@@ -64,8 +64,8 @@ export class TabsPage {
     window.open(encodedUrl, '_blank');
   }
 
-  openTwitch() {
-    const youtubeChannelUrl = 'https://www.facebook.com/CircuitRicardoTormoOficial/?locale=es_ES';
+  openTikTok() {
+    const youtubeChannelUrl = 'https://www.tiktok.com/@circuitricardotormo';
     const encodedUrl = encodeURIComponent(youtubeChannelUrl);
     window.open(encodedUrl, '_blank');
   }

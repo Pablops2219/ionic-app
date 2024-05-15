@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { Vehicle } from 'src/app/models/vehicle.module';
+import { ComunityService } from 'src/app/services/community/comunity.service';
 import { FirebaseService } from 'src/app/services/firebase/firebase.service';
 import { UtilsService } from 'src/app/services/utils/utils.service';
 
@@ -15,12 +16,13 @@ export class CommunityEventsComponent  implements OnInit {
   firebaseSvc = inject(FirebaseService);
   utilsSvc = inject(UtilsService);
   loading: boolean = false;
-  participation: boolean = false;
 
   vehicles: Vehicle[] = [];
   participants: Vehicle[] = [];
   
-  constructor() { }
+  constructor(
+    public comunityService: ComunityService,
+  ) { }
 
   ngOnInit(
 
@@ -71,7 +73,7 @@ export class CommunityEventsComponent  implements OnInit {
       position: 'middle',
       icon: 'checkmark-outline'
     })
-    this.participation = true;
+    this.comunityService.participation = true;
   }
 
   async presentAlertConfirm(vehicle: Vehicle) {

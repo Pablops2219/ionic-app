@@ -38,7 +38,7 @@ export class Tab4Page {
   constructor(
     public eventService: EventService,
     public comunityService: ComunityService,
-     private router: Router,
+    private router: Router,
     private loadingController: LoadingController,
     private platform: Platform) {
     this.events = this.eventService.getEvents();
@@ -79,19 +79,22 @@ export class Tab4Page {
   }
 
   typeEvent(comunity: any) {
-    const desiredEventTitle = comunity.title; // Título del evento que quieres verificar
-    const desiredSubstring = 'ncuesta'; // Subcadena que deseas encontrar en el título
+    const desiredEventTitle = comunity.title; 
+    const desiredSubstring = 'ncuesta'; 
 
     const event = this.comunitys.find((e) => e.title === desiredEventTitle);
 
     if (event.title.includes(desiredSubstring)) {
-      // Si se encuentra el evento y el título contiene la subcadena deseada
       console.log(`El evento contiene "${desiredSubstring}"`);
 
     } else {
+      
       console.log(`El evento no contiene "${desiredSubstring}"`);
       this.partipateWithVehicle();
+      
     }
+
+    
   }
 
 

@@ -48,14 +48,14 @@ export class AuthPage implements OnInit {
       await loading.present();
 
       let path = `users/${uid}`
-      delete this.form.value.password //Contraseña no almacenada privacidad del usuario
+      delete this.form.value.password //Contraseña no se almacena por privacidad del usuario
 
       this.firebaseSvc.getDocument(path).then( (user: User )=> {
         
         this.utilsSvc.saveInLocalStorage('user', user);
         this.utilsSvc.routerLink('/tabs/tab1');
         this.form.reset();
-        this.utilsSvc.presentToast({message: `Bienvenido ${user.name}`, duration: 2000, color: 'tertiary', icon:'person-circle-outline'})
+        this.utilsSvc.presentToast({message: `Bienvenido ${user.name}`, duration: 2000,  position:'middle', color: 'tertiary', icon:'person-circle-outline'})
 
       }).catch(error => {
         console.log(error);

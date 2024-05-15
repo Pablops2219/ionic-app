@@ -6,7 +6,9 @@
 
 <ion-content>
   <ion-toolbar>
-    <ion-title>Elige tu vehículo</ion-title>
+    <ion-title>
+      <h1>{{!this.comunityService.participation ? 'Elige tu vehículo ' : 'Ya estás participando'}}</h1>
+    </ion-title>
   </ion-toolbar>
   <ion-list *ngIf="!loading">
     <ion-item-sliding *ngFor="let vehicle of vehicles">
@@ -34,7 +36,8 @@
             <!-- Botón para cada vehículo -->
 
           </div>
-          <ion-button *ngIf="!participation" (click)="presentAlertConfirm(vehicle)" slot="end" color="primary">
+          <ion-button *ngIf="!this.comunityService.participation" (click)="presentAlertConfirm(vehicle)" slot="end"
+            color="primary">
             Participar
           </ion-button>
         </div>

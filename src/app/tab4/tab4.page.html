@@ -90,17 +90,12 @@
           <div class="contenido">
             <h3>{{ comunity.title }}</h3>
             <div class="precioContainer">
-              <b>{{ comunity.reward }} </b>
-              <img src="assets/images/coin.png" class="token" alt="">
+              <b>{{ comunity.reward }} tokens</b>
             </div>
             <p>{{ comunity.date }}</p>
-            <ion-fab class="bottom-participar" vertical="bottom" horizontal="end" slot="fixed">
-              <ion-fab-button class="bottom-participar" (click)="typeEvent(comunity)">
-                <p>Participar</p>
-              </ion-fab-button>
-            </ion-fab>
-
-
+            <ion-button slot="end" color="primary" (click)="typeEvent(comunity)">
+              Participar
+            </ion-button>
           </div>
         </div>
       </ng-container>

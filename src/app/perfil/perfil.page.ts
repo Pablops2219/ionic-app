@@ -12,6 +12,7 @@ import { FirebaseService } from '../services/firebase/firebase.service';
 import { UtilsService } from '../services/utils/utils.service';
 import { User } from '../models/user.model';
 import { Vehicle } from '../models/vehicle.module';
+import { AchievementsService } from '../services/archievements/achievements.service';
 
 
 @Component({
@@ -26,15 +27,17 @@ export class PerfilPage implements OnInit {
   firebaseSvc = inject (FirebaseService);
   utilsSvc = inject (UtilsService);
   vehicles: Vehicle[] = [];
+  achievements: any[];
 
 
   constructor(
     private loadingController: LoadingController,
     private platform: Platform,
     private modalController: ModalController,
-    private location: Location
+    private location: Location,
+    private achievementsService: AchievementsService,
   ) {
-    
+    this.achievements = this.achievementsService.getAchievement();
   }
 
   

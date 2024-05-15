@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
   <ion-card class="cartaEvento">
-    <img  class="promoIMG" src="{{ promotions[0].srcimg }}" />
+    <img class="promoIMG" src="{{ promotions[0].srcimg }}" />
     <ion-card-header>
       <ion-card-title>{{ promotions[0].title }}</ion-card-title>
 
@@ -8,10 +8,13 @@
 
     <ion-card-content>
       <p>{{ promotions[0].description }}</p>
-      <ion-card-subtitle class="precioContainer">
-        {{promotions[0].precio}} monedas
+      <div class="precioContainer">
+        {{promotions[0].precio}} tokens
         <img class="moneda" src="assets/images/coin.png" alt="">
-      </ion-card-subtitle>
+        <ion-button (click)="presentAlertConfirm(promotions[0])" slot="end" color="primary">
+          Comprar
+        </ion-button>
+      </div>
     </ion-card-content>
 
 
@@ -25,12 +28,15 @@
           <h3>{{ promotion.title }}</h3>
           <p>{{ promotion.description }}</p>
           <div class="precioContainer">
-            <p>{{ promotion.precio }} monedas </p>
+
+            <p>{{ promotion.precio }} tokens </p>
             <img class="moneda" src="assets/images/coin.png" alt="">
+            <ion-button (click)="presentAlertConfirm(promotion)" slot="end" color="primary">
+              Comprar
+            </ion-button>
           </div>
         </div>
       </div>
     </ng-container>
   </ion-card>
-
 </ion-content>

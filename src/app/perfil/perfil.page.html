@@ -94,8 +94,8 @@
           <img src="https://th.bing.com/th/id/R.ea44b482ab49ce7e6e402eab6fff527f?rik=yQqlh0Q4RDKRKg&pid=ImgRaw&r=0"
             alt="">
           <ion-item color="primary">
-            <ion-text color="light" style="font-size: 10px;">
-              <p>Premio <br> Comunitario</p>
+            <ion-text color="light">
+              <p>Primera <br> comunitario</p>
             </ion-text>
           </ion-item>
         </ion-card>
@@ -158,122 +158,16 @@
   </ion-card>
 
   <!--
-  <swiper-container>
-    <swiper-slide>
-      <ion-card>
-        <img class="car-img" alt="Car1" src= />
-
-        <ion-card color="primary" class="descripcionCoche">
-          <ion-card-header>
-            <ion-card-title>Detalles del coche</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-list class="ion-no-padding">
-              <ion-item color="secondary">
-                <ion-label>Matricula: </ion-label>
-              </ion-item>
-
-              <ion-item color="secondary">
-                <ion-label>Marca: </ion-label>
-              </ion-item>
-
-              <ion-item color="secondary">
-                <ion-label>Modelo: </ion-label>
-              </ion-item>
-
-              <ion-item color="secondary">
-                <ion-label>Año: </ion-label>
-              </ion-item>
-
-              <ion-item color="secondary" lines="none">
-                <ion-label>Color: </ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-
-      </ion-card>
-    </swiper-slide>
-    <swiper-slide>
-      <ion-card>
-        <img alt="Car2"
-          src="https://www.cochesyconcesionarios.com/media/cache/1024w/uploads/toyota/corolla/12/ha/toyota-corolla-hatchback-06-20a76562b0bb5004f7dffdac48933f8ef3f6b744.jpeg" />
-        <ion-card color="primary" class="descripcionCoche">
-          <ion-card-header>
-            <ion-card-title>Detalles del coche</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-list class="ion-no-padding">
-              <ion-item color="secondary">
-                <ion-label>Matricula: {{users[1].vehicles[1].licensePlate}}</ion-label>
-              </ion-item>
-
-              <ion-item color="secondary">
-                <ion-label>Marca: {{users[1].vehicles[1].make}}</ion-label>
-              </ion-item>
-
-              <ion-item color="secondary">
-                <ion-label>Modelo: {{users[1].vehicles[1].model}}</ion-label>
-              </ion-item>
-
-              <ion-item color="secondary">
-                <ion-label>Año: {{users[1].vehicles[1].year}}</ion-label>
-              </ion-item>
-
-              <ion-item color="secondary" lines="none">
-                <ion-label>Color: {{users[1].vehicles[1].color}}</ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-
-
-      </ion-card>
-    </swiper-slide>
-
-    ******* <swiper-slide>
-      <ion-card>
-        <img alt="Car3"
-          src="https://fotos.quecochemecompro.com/toyota-corolla/toyota-corolla-hibrido-naranja.jpeg?size=750x400" />
-          <ion-card color="primary" class="descripcionCoche">
-            <ion-card-header>
-              <ion-card-title>Detalles del coche</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-list class="ion-no-padding">
-                <ion-item color="secondary">
-                  <ion-label>Matricula: {{users[2].vehicles[2].licensePlate}}</ion-label>
-                </ion-item>
-        
-                <ion-item color="secondary">
-                  <ion-label>Marca: {{users[2].vehicles[2].make}}</ion-label>
-                </ion-item>
-        
-                <ion-item color="secondary">
-                  <ion-label>Modelo: {{users[2].vehicles[2].model}}</ion-label>
-                </ion-item>
-        
-                <ion-item color="secondary">
-                  <ion-label>Año: {{users[2].vehicles[2].year}}</ion-label>
-                </ion-item>
-        
-                <ion-item color="secondary" lines="none">
-                  <ion-label>Color: {{users[2].vehicles[2].color}}</ion-label>
-                </ion-item>
-              </ion-list>
-            </ion-card-content>
-          </ion-card>
-    
-          
-      </ion-card>
-    </swiper-slide> ******
-
-
-  </swiper-container>
+  <ion-card ngFor="let achievement of achievementsService.getAchievement()">
+    <div>
+      <img src="{{ achievement.image }}" alt="">
+    </div>
+    <div>
+      <h3>{{ achievement.title }}</h3>
+      <b>{{ achievement.reward }}</b>
+    </div>
+  </ion-card>
   -->
-
-
-
 
   <ion-text color="primary">
     <h1 class="ion-padding-start">Comparte tu coche!</h1>
@@ -285,7 +179,6 @@
       <div class="qr-wrapper d-flex-center">
         <qr-code [value]="qrText" size="190" errorCorrectionLevel="M"></qr-code>
         <img *ngIf="!qrText" src="assets/images/qr.webp" class="qr-placeholder" alt="">
-
       </div>
     </div>
   </div>
@@ -297,5 +190,7 @@
       <ion-icon slot="end" name="share-social-outline"></ion-icon>
     </ion-button>
   </div>
+
+  <!--===== Promociones =======-->
 
 </ion-content>
