@@ -4,7 +4,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'Ricardo Tormo App',
+  appName: 'Ricardo Tormo App', 
   webDir: 'www',
   plugins: {
     PushNotifications: {

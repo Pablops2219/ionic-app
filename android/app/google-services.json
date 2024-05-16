@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1048822807098",
+    "project_id": "base-39538",
+    "storage_bucket": "base-39538.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048822807098:android:ab661d1e4b359979689303",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzg3bxgkobDIhCUM_r2nP4nmpvQtp5T0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
