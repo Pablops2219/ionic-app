@@ -33,19 +33,31 @@ export class GaragePage implements OnInit {
 
   
 
-  //======== Agregar o actualizar vehiculos ========
-  async addUpdateVehicle(vehicle?: Vehicle){
-
-    let success = await this.utilsSvc.presentModal({
-      component: AddUpdateVehicleComponent,
-      cssClass: 'add-update-modal',
-      componentProps: {vehicle}
-    })
-
-    if(success){
-      this.getVehicles();
+    //======== Agregar o actualizar vehiculos ========
+    async addUpdateVehicle(vehicle?: Vehicle) {
+      try {
+        const success = await this.utilsSvc.presentModal({
+          component: AddUpdateVehicleComponent,
+          cssClass: 'add-update-modal',
+          componentProps: { vehicle }
+        });
+    
+  
+        if (success) {
+          await this.getVehicles();
+        }
+      } catch (error) {
+  
+        console.error('Error while adding/updating vehicle:', error);
+        this.utilsSvc.presentToast({
+          message: 'Error al actualizar el vehículo. Por favor, inténtalo de nuevo.',
+          duration: 2000,
+          position: 'middle',
+          color: 'danger',
+          icon: 'close-outline'
+        });
+      }
     }
-  }
 
   //======== Obtener vehiculos ========
   getVehicles(){

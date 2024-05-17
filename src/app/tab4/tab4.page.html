@@ -46,9 +46,9 @@
           <div class="contenido">
             <h3>{{ event.title }}</h3>
             <p>{{ event.date }}</p>
-            <ion-button (click)="captureScreen()" id="generate-pdf-btn" expand="block" fill="clear" shape="round">
-              Comprar entrada
-            </ion-button>
+            <div style="display: flex; justify-content: flex-end; margin-right: 10px; margin-bottom: 10px;">
+              <ion-button (click)="captureScreen()" fill="outline">Comprar</ion-button>
+            </div>
           </div>
         </div>
       </ng-container>
@@ -92,10 +92,14 @@
             <div class="precioContainer">
               <b>{{ comunity.reward }} tokens</b>
             </div>
-            <p>{{ comunity.date }}</p>
-            <ion-button slot="end" color="primary" (click)="typeEvent(comunity)">
-              Participar
-            </ion-button>
+            <div class="dateContainer">
+              <div class="date">
+                <p>{{ comunity.date }}</p>
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 10px; margin-bottom: 10px;">
+                <ion-button (click)="typeEvent(comunity)" fill="outline">Participar</ion-button>
+              </div>
+            </div>
           </div>
         </div>
       </ng-container>

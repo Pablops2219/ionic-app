@@ -1,17 +1,8 @@
-ion-content{
-  margin-top: 20px;
-}
-// .noticia1 {
-//     // width: 90%;    
-//     border-radius: 5px;
-// }
-ion-card {
-    width: 90%;
-}
 
-// ion-card, .card-ios, .card-md {
-//     margin-left: 0px !important;
-// }
+
+
+
+
 
 swiper-container {
   width: 100%;
@@ -102,4 +93,76 @@ swiper-slide {
 ion-chip {
   --background: #ff0000  !important;
   --color: #ffffff;
+}
+
+ion-icon{
+  color: white;
+}
+
+.cartaEvento p{
+  margin-bottom: 10px;
+}
+
+ion-card-title{
+  color: rgb(205, 133, 16);
+  font-size: 25px;
+  
+}
+
+.evento {
+  display: flex;
+  flex-direction: row;
+}
+
+.evento img {
+  width: 45%;
+  object-fit: cover; /* Asegura que la imagen cubra completamente su área sin distorsionar */
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+}
+
+.promoIMG{
+  width: 100%;
+  height: auto;
+    padding: 5px;
+    padding-right: 0;
+    border-radius: 9px;
+}
+
+.contenido {
+  flex-grow: 1;
+  padding-left: 10px; /* Añade un poco de espacio entre la imagen y el contenido */
+}
+
+.contenido h3{
+    color: rgb(205, 133, 16);
+    font-size: 18px;
+}
+
+.moneda{
+    margin-bottom: -5px;
+    max-width: 30px;
+    margin-right: 50px;
+
+}
+
+.precioContainer{
+  font-weight: 700;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.precio{
+  display: flex;
+  gap:5px;
+  flex-direction: row;
+}
+
+.marginfix{
+height: 100%;
 }

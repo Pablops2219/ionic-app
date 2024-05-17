@@ -9,11 +9,10 @@
     <ion-card-content>
       <p>{{ promotions[0].description }}</p>
       <div class="precioContainer">
-        {{promotions[0].precio}} tokens
-        <img class="moneda" src="assets/images/coin.png" alt="">
-        <ion-button (click)="presentAlertConfirm(promotions[0])" slot="end" color="primary">
-          Comprar
-        </ion-button>
+        <div class="precio">
+          <p>{{ promotions[0].precio }} tokens </p>
+        </div>
+        <ion-button (click)="presentAlertConfirm(promotions[0])" fill="outline">Adquirir</ion-button>
       </div>
     </ion-card-content>
 
@@ -28,11 +27,11 @@
           <h3>{{ promotion.title }}</h3>
           <p>{{ promotion.description }}</p>
           <div class="precioContainer">
-
-            <p>{{ promotion.precio }} tokens </p>
-            <img class="moneda" src="assets/images/coin.png" alt="">
-            <ion-button (click)="presentAlertConfirm(promotion)" slot="end" color="primary">
-              Comprar
+            <div class="precio">
+              <p>{{ promotion.precio }} tokens </p>
+            </div>
+            <ion-button style="margin-right: 10px; margin-bottom: 10px;" (click)="presentAlertConfirm(promotion)"
+              fill="outline">Adquirir
             </ion-button>
           </div>
         </div>

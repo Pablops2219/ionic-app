@@ -135,11 +135,18 @@ ion-chip {
 }
 
 
-.precioContainer {
+.dateContainer{
   font-weight: 700;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.date{
+  display: flex;
+  gap:5px;
+  flex-direction: row;
 }
 
 #participar {

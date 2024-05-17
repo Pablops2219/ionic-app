@@ -22,7 +22,7 @@ export class PromotionsService {
       },
       { id: 3,
         title: '50% camiseta', 
-        srcimg: 'https://th.bing.com/th/id/OIP.Zrad0etmuDfBA6LP1EPM6QAAAA?rs=1&pid=ImgDetMain', 
+        srcimg: 'https://ih1.redbubble.net/image.70138200.5702/ssrco,slim_fit_t_shirt,two_model,4f4942:33c5b16199,front,square_three_quarter,1000x1000.jpg', 
         description: 'Obtén un 50% de descuento aplicable al pvp de la compra de cualquiera de nuestras camisetas de Ricardo Tolmo Shop', 
         precio: 500,
         comprado: false,

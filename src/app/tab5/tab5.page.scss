@@ -28,7 +28,8 @@ ion-card-title{
   }
 
   .promoIMG{
-    min-width: 30%;
+    width: 100%;
+    height: auto;
       padding: 5px;
       padding-right: 0;
       border-radius: 9px;
@@ -55,8 +56,16 @@ ion-card-title{
     font-weight: 700;
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items:center;
+    justify-content: space-between;
   }
+
+  .precio{
+    display: flex;
+    gap:5px;
+    flex-direction: row;
+  }
+
 
 .marginfix{
   height: 100%;

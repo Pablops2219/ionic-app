@@ -25,18 +25,45 @@ export class Tab5Page implements OnInit {
   ngOnInit() {
   }
 
-  buyPromotion(promotion : any){
+  buyPromotion(promotion: any) {
     let user = this.user();
 
-    if(user.coins >= promotion.precio){
-      user.coins -= promotion.precio;
-      this.utilsSvc.saveInLocalStorage('user', user);
-      this.utilsSvc.presentToast({message: `Promocicón adquirida`, duration: 2000,  position:'middle', color: 'success', icon:'checkmark-outline'})
-      promotion.comprado = true;
-    }else{
-      this.utilsSvc.presentToast({message: `No dispones de ${promotion.precio} tokens`, duration: 2000,  position:'middle', color: 'danger', icon:'close-outline'})
+    if (user.coins >= promotion.precio) {
+        user.coins -= promotion.precio;
+        
+        // Actualiza el almacenamiento local
+        this.utilsSvc.saveInLocalStorage('user', user);
+        
+
+        this.firebaseSvc.updateUserInDatabase(user).then(() => {
+            this.utilsSvc.presentToast({
+                message: `Promoción adquirida`,
+                duration: 2000,
+                position: 'middle',
+                color: 'success',
+                icon: 'checkmark-outline'
+            });
+            promotion.comprado = true;
+        }).catch(error => {
+            console.error('Error updating user in database', error);
+            this.utilsSvc.presentToast({
+                message: `Error al adquirir la promoción. Por favor, inténtalo de nuevo.`,
+                duration: 2000,
+                position: 'middle',
+                color: 'danger',
+                icon: 'close-outline'
+            });
+        });
+    } else {
+        this.utilsSvc.presentToast({
+            message: `No dispones de ${promotion.precio} tokens`,
+            duration: 2000,
+            position: 'middle',
+            color: 'danger',
+            icon: 'close-outline'
+        });
     }
-  }
+}
 
   async presentAlertConfirm(promotion: any) {
     this.utilsSvc.presentAlert({

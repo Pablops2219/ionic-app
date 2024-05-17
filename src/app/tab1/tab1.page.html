@@ -1,98 +1,120 @@
-<div class="ion-page" id="main-content">
-  
+<ion-content [fullscreen]="true">
 
 
-
-  <ion-content padding="sm">
-
-
-    <!--<ion-label class="TituloTab">Hola {{users[0].name}}!</ion-label> -->
+  <ion-label class="TituloTab">Hola {{user.name}}!</ion-label>
 
 
-    <swiper-container pagination-dynamic-bullets="true">
-      <swiper-slide>
-        <ion-card>
-          <img class="noticiaIMG"
-            src="https://binn.wpenginepowered.com/wp-content/uploads/2023/03/Ferrari-Challenge-Circuit-Ricardo-Tormo-Eliseo-Donno-accion-1-2048x1365.jpg" />
-          <ion-card-header>
-            <ion-card-title>Ferrari Challenge</ion-card-title>
-          </ion-card-header>
+  <swiper-container pagination-dynamic-bullets="true">
+    <swiper-slide>
+      <ion-card>
+        <img class="noticiaIMG"
+          src="https://binn.wpenginepowered.com/wp-content/uploads/2023/03/Ferrari-Challenge-Circuit-Ricardo-Tormo-Eliseo-Donno-accion-1-2048x1365.jpg" />
+        <ion-card-header>
+          <ion-card-title>Ferrari Challenge</ion-card-title>
+        </ion-card-header>
 
-          <ion-card-content>
-            <p>
-              El Ferrari Challenge Trofeo Pirelli ha sido seleccionada como la serie oficial monomarca que se unirá a
-              los FIA Motorsport Games...
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </swiper-slide>
-      <swiper-slide>
+        <ion-card-content>
+          <p>
+            El Ferrari Challenge Trofeo Pirelli ha sido seleccionada como la serie oficial monomarca que se unirá a
+            los FIA Motorsport Games...
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+    <swiper-slide>
 
-        <ion-card>
-          <img class="noticiaIMG"
-            src="https://binn.wpenginepowered.com/wp-content/uploads/2022/03/web-curva-Bernat-Martinez-8.jpg" />
-          <ion-card-header>
-            <ion-card-title>Las Curvas del Circuit Ricardo Tormo una a una</ion-card-title>
-          </ion-card-header>
+      <ion-card>
+        <img class="noticiaIMG"
+          src="https://binn.wpenginepowered.com/wp-content/uploads/2022/03/web-curva-Bernat-Martinez-8.jpg" />
+        <ion-card-header>
+          <ion-card-title>Las Curvas del Circuit Ricardo Tormo una a una</ion-card-title>
+        </ion-card-header>
 
-          <ion-card-content>
-            Iniciamos una serie de vídeos sobre las curvas del Circuit Ricardo Tormo en la que veremos todo su
-            esplendor...
-          </ion-card-content>
-        </ion-card>
-      </swiper-slide>
-      <swiper-slide>
+        <ion-card-content>
+          Iniciamos una serie de vídeos sobre las curvas del Circuit Ricardo Tormo en la que veremos todo su
+          esplendor...
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+    <swiper-slide>
 
-        <ion-card>
-          <img class="noticiaIMG"
-            src="https://binn.wpenginepowered.com/wp-content/uploads/2024/05/VOLRACE-51-2048x1437.jpg" />
-          <ion-card-header>
-            <ion-card-title>Drift, batallas y pasión en Volrace Drift</ion-card-title>
-          </ion-card-header>
+      <ion-card>
+        <img class="noticiaIMG"
+          src="https://binn.wpenginepowered.com/wp-content/uploads/2024/05/VOLRACE-51-2048x1437.jpg" />
+        <ion-card-header>
+          <ion-card-title>Drift, batallas y pasión en Volrace Drift</ion-card-title>
+        </ion-card-header>
 
-          <ion-card-content>
-            El Circuit Ricardo Tormo ha celebrado este fin de semana la única cita en España del Drift Masters...
-          </ion-card-content>
-        </ion-card>
-      </swiper-slide>
+        <ion-card-content>
+          El Circuit Ricardo Tormo ha celebrado este fin de semana la única cita en España del Drift Masters...
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
 
-    </swiper-container>
+  </swiper-container>
 
-    <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
-      (click)="navigateToStreaming()"> 
-      
-      <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
+  <ion-card class="cartaEvento inLive" *ngFor="let event of eventService.getEventsLive()"
+    (click)="navigateToStreaming()">
 
-      <ion-card-header class="card-header">
-        <ion-card-title>{{ event.title }}</ion-card-title>
-        <ion-chip mode="ios">
-          <ion-label>En directo</ion-label>
-        </ion-chip>
-      </ion-card-header>
+    <img alt="Silhouette of mountains" src="{{ event.srcimg }}" />
 
-      <ion-card-content>
-        <p>{{ event.description }}</p>
-      </ion-card-content>
-    </ion-card>
+    <ion-card-header class="card-header">
+      <ion-card-title>{{ event.title }}</ion-card-title>
+      <ion-chip mode="ios">
+        <ion-label>En directo</ion-label>
+      </ion-chip>
+    </ion-card-header>
 
-    <ion-item>
-      <ion-label>
-        <h1>Proximos eventos</h1>
-      </ion-label>
-    </ion-item>
+    <ion-card-content>
+      <p>{{ event.description }}</p>
+    </ion-card-content>
+  </ion-card>
 
-    <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
-      <ng-container>
-        <div class="fila">
-          <img class="imgEvent" src="{{ event.srcimg }}" />
-          <div class="contenido">
-            <h3>{{ event.title }}</h3>
-            <b>{{ event.date }}</b>
+  <ion-item>
+    <ion-label>
+      <h1>Promociones</h1>
+    </ion-label>
+  </ion-item>
+
+  <ion-card class="cartaEvento evento" *ngFor="let promotion of promotions;">
+    <ng-container>
+      <div class="fila">
+        <img class="promoIMG" src="{{ promotion.srcimg }}" />
+        <div class="contenido">
+          <h3>{{ promotion.title }}</h3>
+          <p>{{ promotion.description }}</p>
+          <div class="precioContainer">
+            <div class="precio">
+              <p>{{ promotion.precio }} tokens </p>
+            </div>
+            <ion-button style="margin-right: 10px; margin-bottom: 10px;" (click)="presentAlertConfirm(promotion)"
+              fill="outline">Adquirir
+            </ion-button>
           </div>
         </div>
-      </ng-container>
-    </ion-card>
+      </div>
+    </ng-container>
+  </ion-card>
 
-  </ion-content>
+  <ion-item>
+    <ion-label>
+      <h1>Proximos eventos</h1>
+    </ion-label>
+  </ion-item>
 
-</div>
+  <ion-card class="cartaEvento evento" *ngFor="let event of eventService.getEvents()">
+    <ng-container>
+      <div class="fila">
+        <img class="eventIMG" src="{{ event.srcimg }}" />
+        <div class="contenido">
+          <h3>{{ event.title }}</h3>
+          <p>{{ event.date }}</p>
+          <div style="display: flex; justify-content: flex-end; margin-right: 10px; margin-bottom: 10px;">
+            <ion-button (click)="captureScreen()" fill="outline">Comprar</ion-button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ion-card>
+
+</ion-content>

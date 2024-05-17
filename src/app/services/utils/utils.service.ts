@@ -25,7 +25,8 @@ async takePicture(promptLabelHeader : string){
     source: CameraSource.Prompt,
     promptLabelHeader,
     promptLabelPhoto: 'Selecciona una imagen',
-    promptLabelPicture: 'Toma una foto'
+    promptLabelPicture: 'Toma una foto',
+    promptLabelCancel: 'Cancelar'
   });
 
 };

@@ -44,6 +44,13 @@ export class FirebaseService {
     this.utilsSvc.routerLink('/auth');
   }
 
+  updateUserInDatabase(user: any) {
+    const db = getFirestore();
+    const userDoc = doc(db, `users/${user.uid}`);
+    return updateDoc(userDoc, {
+      coins: user.coins,
+    });
+  }
 
 
 
@@ -62,40 +69,34 @@ export class FirebaseService {
     return (await getDoc(doc(getFirestore(), path))).data();
   }
 
-  //agregar un documento
-  addDocument(path: string , data: any){
-    return addDoc(collection(getFirestore(), path), data)
+
+
+  //Añadir un documento
+  addDocument(path: string, data: any) {
+    return addDoc(collection(getFirestore(), path), data);
   }
 
-
-
   //Actualizar un documento
-  updateDocument(path: string, data: any){
-    return updateDoc(doc(getFirestore(), path), data)
+  updateDocument(path: string, data: any) {
+    return updateDoc(doc(getFirestore(), path), data);
   }
 
   //Eliminar un documento
-  deleteDocument(path: string){
-    return deleteDoc(doc(getFirestore(), path))
+  deleteDocument(path: string) {
+    return deleteDoc(doc(getFirestore(), path));
   }
 
-
-  //=======Almacenamineto======
-
-  //Subir imagen
-  async uploadImage(path: string, data_url: string): Promise<string>{
-    return uploadString(ref(getStorage(),path), data_url, 'data_url').then(() =>{
-      return getDownloadURL(ref(getStorage(),path))
-    })
+  // Almacenamiento
+  async uploadImage(path: string, data_url: string): Promise<string> {
+    await uploadString(ref(getStorage(), path), data_url, 'data_url');
+    return getDownloadURL(ref(getStorage(), path));
   }
 
-  //Obterner ruta de la imagen con su Url
-  async getFilePath(url : string){
-    return ref(getStorage(), url).fullPath
+  async getFilePath(url: string): Promise<string> {
+    return ref(getStorage(), url).fullPath;
   }
 
-  //Eliminar archivo
-  deleteFile(path: string){
-    return deleteObject(ref(getStorage(),path));
+  deleteFile(path: string) {
+    return deleteObject(ref(getStorage(), path));
   }
 }
